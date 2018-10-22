@@ -1,0 +1,10 @@
+.card-img-top {
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.card {
+  min-width: 200px;
+}
