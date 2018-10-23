@@ -14,12 +14,14 @@
   font-size: 20pt;
 }
 
+/* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) */
 .site {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
+/* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) */
 main {
   flex: 1;
 }
