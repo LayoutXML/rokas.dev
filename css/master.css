@@ -13,3 +13,13 @@
   color: #ffffff;
   font-size: 20pt;
 }
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
