@@ -12,9 +12,17 @@
   margin: 0 auto;
 }
 
+a > .card-img-top {
+  text-align: center;
+  margin: 0 auto;
+}
+
 .card {
-  background-color: #e9ecef;
   min-width: 200px;
+}
+
+.card-background {
+    background-color: #e9ecef;
 }
 
 .card-body {
