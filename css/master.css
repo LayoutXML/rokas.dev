@@ -8,3 +8,8 @@
 .card {
   min-width: 200px;
 }
+
+.footer-button {
+  color: #ffffff;
+  font-size: 20pt;
+}
