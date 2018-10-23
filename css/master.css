@@ -1,3 +1,10 @@
+.jumbotron-main {
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("../data/background.jpg") bottom;
+  background-size: cover;
+  color: #ffffff;
+  background
+}
+
 .card-img-top {
   width: 180px;
   height: 180px;
@@ -16,7 +23,7 @@
 
 .footer-button {
   color: #ffffff;
-  font-size: 20pt;
+  font-size: 18pt;
 }
 
 /* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) */
