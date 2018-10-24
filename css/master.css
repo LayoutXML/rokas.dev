@@ -1,5 +1,5 @@
 .jumbotron-main {
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("../data/background.jpg") bottom;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../data/background.jpg") bottom;
   background-size: cover;
   color: #ffffff;
   background
@@ -12,7 +12,7 @@
   margin: 0 auto;
 }
 
-a > .card-img-top {
+a>.card-img-top {
   text-align: center;
   margin: 0 auto;
 }
@@ -22,7 +22,7 @@ a > .card-img-top {
 }
 
 .card-background {
-    background-color: #eeeeee;
+  background-color: #eeeeee;
 }
 
 .card-body {
