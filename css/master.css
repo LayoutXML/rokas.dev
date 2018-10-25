@@ -34,14 +34,19 @@ a>.card-img-top {
   font-size: 18pt;
 }
 
-/* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) */
+/* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
+html, body {
+    width: 100%;
+    display: flex;
+}
+
+/* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
 .site {
-  display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
-/* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) */
+/* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
 main {
-  flex: 1;
+  flex-grow: 1;
 }
