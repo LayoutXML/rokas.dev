@@ -1,3 +1,4 @@
+/* Background image on jumbotron (on the main page) */
 .jumbotron-main {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../data/background.jpg") bottom;
   background-size: cover;
@@ -5,6 +6,7 @@
   background
 }
 
+/* Restrict the image (logo) size for cards */
 .card-img-top {
   width: 180px;
   height: 180px;
@@ -12,23 +14,28 @@
   margin: 0 auto;
 }
 
+/* Aligning image (logo) to center for cards */
 a>.card-img-top {
   text-align: center;
   margin: 0 auto;
 }
 
+/* Restricting card width so that images (logos) wouldn't leave the card borders */
 .card {
   min-width: 200px;
 }
 
+/* Adding a background color to cards top parts */
 .card-background {
   background-color: #eeeeee;
 }
 
+/* Changing background color to cards main pats */
 .card-body {
   background-color: #ffffff;
 }
 
+/* Size and color for footer buttons */
 .footer-button {
   color: #ffffff;
   font-size: 18pt;
