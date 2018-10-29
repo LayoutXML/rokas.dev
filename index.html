@@ -7,6 +7,7 @@
   <title>Rokas Jankunas</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/custom-github-calendar.css">
   <link rel="stylesheet" href="css/master.css">
   <meta name="theme-color" content="#424242" />
 </head>
@@ -56,6 +57,13 @@
         <p class="lead">My name is Rokas Jankunas and I'm a Software Developer, Customer Support Agent and a Computing Science Student.</p>
         <a class="btn btn-primary btn-lg btn-raised" href="#" role="button">Learn more</a>
       </div>
+    </div>
+
+    <!-- Contribution graph using https://github.com/IonicaBizau/github-calendar. Hidden on small and extra small devices -->
+    <div class="container mt-5 d-none d-md-block">
+        <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
+        <div class="calendar pt-2">Loading contribution graph</div>
+        <script>new GitHubCalendar(".calendar", "layoutxml");</script>
     </div>
 
     <!-- Pinned projects -->
