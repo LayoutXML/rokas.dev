@@ -41,11 +41,11 @@ a>.card-img-top {
   font-size: 18pt;
 }
 
-.about-container {
+.cv-container {
   max-width: 728px;
 }
 
-.avatar {
+.cv-avatar {
   width: 95px;
   max-width: 100%;
   overflow: hidden;
@@ -54,17 +54,34 @@ a>.card-img-top {
   margin: 0 auto;
 }
 
-.title-button {
+.cv-button {
   color: #000000;
   font-size: 18pt;
 }
 
+.cv-title {
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+}
+
+.cv-contact {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 100%;
+  display: block;
+}
+
+.cv-category-title {
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+}
+
 /* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
 html, body {
-    width: 100%;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 /* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
