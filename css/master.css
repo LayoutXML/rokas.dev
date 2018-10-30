@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Chivo:300,700,900|Overpass:300,400');
+
 /* Background image on jumbotron (on the main page) */
 .jumbotron-main {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../data/background.jpg") bottom;
@@ -74,6 +76,45 @@ a>.card-img-top {
 .cv-category-title {
   border-top: 2px solid #000000;
   border-bottom: 2px solid #000000;
+}
+
+.cv-name > h1 {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+.cv-title > h2 {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 300;
+  font-size: 1.75rem;
+  letter-spacing: -.1rem;
+}
+
+.cv-subtitle > p {
+    font-family: 'Overpass', sans-serif;
+    font-weight: 300;
+    font-size: 1.05rem;
+}
+
+.cv-category-title > h3 {
+    font-family: 'Chivo', sans-serif;
+    font-weight: 900;
+}
+
+.cv-category-content > h4 {
+    font-family: 'Chivo', sans-serif;
+    font-weight: 700;
+}
+
+.cv-category-content > h5 {
+    font-family: 'Overpass', sans-serif;
+    font-weight: 400;
+}
+
+.cv-category-content > p {
+    font-family: 'Overpass', sans-serif;
+    font-weight: 400;
 }
 
 /* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
