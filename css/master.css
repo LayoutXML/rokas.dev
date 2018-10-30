@@ -44,11 +44,11 @@ a>.card-img-top {
 }
 
 .cv-container {
-  max-width: 728px;
+  max-width: 725px;
 }
 
 .cv-avatar {
-  width: 95px;
+  width: 100px;
   max-width: 100%;
   overflow: hidden;
   border-radius: 100px;
@@ -57,13 +57,13 @@ a>.card-img-top {
 }
 
 .cv-button {
-  color: #000000;
+  color: #424242;
   font-size: 18pt;
 }
 
 .cv-title {
-  border-top: 2px solid #000000;
-  border-bottom: 2px solid #000000;
+  border-top: 2px solid #9E9E9E;
+  border-bottom: 2px solid #9E9E9E;
 }
 
 .cv-contact {
@@ -74,14 +74,15 @@ a>.card-img-top {
 }
 
 .cv-category-title {
-  border-top: 2px solid #000000;
-  border-bottom: 2px solid #000000;
+  border-top: 2px solid #9E9E9E;
+  border-bottom: 2px solid #9E9E9E;
 }
 
 .cv-name > h1 {
   font-family: 'Chivo', sans-serif;
   font-weight: 900;
   font-size: 3rem;
+  color: #212121;
 }
 
 .cv-title > h2 {
@@ -89,32 +90,38 @@ a>.card-img-top {
   font-weight: 300;
   font-size: 1.75rem;
   letter-spacing: -.1rem;
+  color: #424242;
 }
 
 .cv-subtitle > p {
     font-family: 'Overpass', sans-serif;
     font-weight: 300;
     font-size: 1.05rem;
+    color: #424242;
 }
 
 .cv-category-title > h3 {
     font-family: 'Chivo', sans-serif;
     font-weight: 900;
+    color: #212121;
 }
 
 .cv-category-content > h4 {
     font-family: 'Chivo', sans-serif;
     font-weight: 700;
+    color: #212121;
 }
 
 .cv-category-content > h5 {
     font-family: 'Overpass', sans-serif;
     font-weight: 400;
+    color: #212121;
 }
 
 .cv-category-content > p {
     font-family: 'Overpass', sans-serif;
     font-weight: 400;
+    color: #424242;
 }
 
 /* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
