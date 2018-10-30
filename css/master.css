@@ -124,6 +124,11 @@ a>.card-img-top {
     color: #424242;
 }
 
+.btn-contact {
+  background-color: #E0E0E0;
+  color: #000000;
+}
+
 /* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
 html, body {
   width: 100%;
