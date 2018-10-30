@@ -141,3 +141,10 @@ html, body {
 main {
   flex-grow: 1;
 }
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 5px;
+  background: #E0E0E0;
+  width: 0%;
+}
