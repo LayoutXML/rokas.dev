@@ -41,16 +41,30 @@ a>.card-img-top {
   font-size: 18pt;
 }
 
+.about-container {
+  max-width: 728px;
+}
+
+.avatar {
+  width: 95px;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.title-button {
+  color: #000000;
+  font-size: 18pt;
+}
+
 /* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
 html, body {
     width: 100%;
     display: flex;
-}
-
-/* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
-.site {
-  min-height: 100vh;
-  flex-direction: column;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 /* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
