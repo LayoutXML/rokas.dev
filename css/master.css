@@ -195,9 +195,3 @@ main {
     display: none !important;
   }
 }
-
-.navbar-nav > .dropdown {
-    max-height: 75vh;
-    height: auto;
-    overflow-x: hidden;
-}
