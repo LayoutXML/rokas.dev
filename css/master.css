@@ -181,3 +181,8 @@ main {
      width: 100%;
    }
 }
+
+/* My workaround for IE bug where pages with screenshots would be extra long */
+.screenshot {
+  max-height: 380px;
+}
