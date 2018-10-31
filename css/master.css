@@ -183,6 +183,15 @@ main {
 }
 
 /* My workaround for IE bug where pages with screenshots would be extra long */
-.screenshot {
-  max-height: 380px;
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .screenshot {
+    max-height: 380px;
+  }
+}
+
+/* My workaround for JavaScript not running on IE - hides contribution graph */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .contributions-graphs {
+    display: none !important;
+  }
 }
