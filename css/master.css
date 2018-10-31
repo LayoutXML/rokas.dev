@@ -148,3 +148,50 @@ main {
   background: #E0E0E0;
   width: 0%;
 }
+
+/* 4 bloks of code below is my workaround for navbar going offscreen for IE 11. Now all buttons are visible */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 1200px) {
+   .navbar {
+     max-width: 1140px;
+     margin: 0 auto;
+     width: 100%;
+   }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 1200px) and (min-width: 992px) {
+   .navbar {
+     max-width: 960px;
+     margin: 0 auto;
+     width: 100%;
+   }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 992px) and (min-width: 768px) {
+   .navbar {
+     max-width: 720px;
+     margin: 0 auto;
+     width: 100%;
+   }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 768px) and (min-width: 576px) {
+   .navbar {
+     max-width: 540px;
+     margin: 0 auto;
+     width: 100%;
+   }
+}
+
+/* My workaround for IE bug where pages with screenshots would be extra long */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .screenshot {
+    max-height: 380px;
+  }
+}
+
+/* My workaround for JavaScript not running on IE - hides contribution graph */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .contributions-graphs {
+    display: none !important;
+  }
+}
