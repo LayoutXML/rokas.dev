@@ -195,3 +195,12 @@ main {
     display: none !important;
   }
 }
+
+/* My workaround for dropdown going offscreen on mobile in landscape */
+@media screen and (max-width: 992px){
+  .navbar-nav > .dropdown {
+      max-height: 75vh;
+      height: auto;
+      overflow-x: hidden;
+  }
+}
