@@ -1,0 +1,18 @@
+plugins:
+  - jekyll-seo-tag
+
+title: Rokas Jankunas
+description: Rokas Jankunas (LayoutXML) projects and contact information
+url: layoutxml.com
+author: Rokas Jankunas
+logo: /data/avatar.png
+social:
+  name: Rokas Jankunas
+  links:
+    - https://www.facebook.com/jankunasrokas
+    - https://www.linkedin.com/in/jankunasrokas/
+    - https://github.com/LayoutXML
+    - https://play.google.com/store/apps/dev?id=9095680560714446900
+    - http://rokasjankunas.com
+    - http://layoutxml.com
+google_site_verification: bjIUYi3ExrcCyGTbw7cvAzhnaza6jNn2qGHg_M3ejAw
