@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Chivo:300,700,900|Overpass:300,400');
+
+/* Background image on jumbotron (on the main page) */
+.jumbotron-main {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../data/background.jpg") bottom;
+  background-size: cover;
+  color: #ffffff;
+  background
+}
+
+/* Restrict the image (logo) size for cards */
+.card-img-top {
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Aligning image (logo) to center for cards */
+a>.card-img-top {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Restricting card width so that images (logos) wouldn't leave the card borders */
+.card {
+  min-width: 200px;
+}
+
+/* Adding a background color to cards top parts */
+.card-background {
+  background-color: #eeeeee;
+}
+
+/* Changing background color to cards main pats */
+.card-body {
+  background-color: #ffffff;
+}
+
+/* Size and color for footer buttons */
+.footer-button {
+  color: #ffffff;
+  font-size: 18pt;
+}
+
+.cv-container {
+  max-width: 725px;
+}
+
+.cv-avatar {
+  width: 100px;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.cv-button {
+  color: #424242;
+  font-size: 18pt;
+}
+
+.cv-title {
+  border-top: 2px solid #9E9E9E;
+  border-bottom: 2px solid #9E9E9E;
+}
+
+.cv-contact {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 100%;
+  display: block;
+}
+
+.cv-category-title {
+  border-bottom: 2px solid #9E9E9E;
+}
+
+.cv-name>h1 {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  color: #212121;
+  line-height: 2.5rem;
+}
+
+.cv-title>h2 {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 300;
+  font-size: 1.75rem;
+  letter-spacing: -.1rem;
+  color: #424242;
+}
+
+.cv-subtitle>p {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 300;
+  font-size: 1.05rem;
+  color: #424242;
+}
+
+.cv-category-title>h3 {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 900;
+  color: #212121;
+}
+
+.cv-category-content>h4 {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 700;
+  color: #212121;
+}
+
+.cv-category-content>h4>a {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 700;
+  color: #212121;
+  text-decoration: underline;
+}
+
+.cv-category-content>h5 {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  color: #212121;
+}
+
+.cv-category-content>p {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  color: #424242;
+}
+
+.btn-contact {
+  background-color: #E0E0E0;
+  color: #000000;
+}
+
+/* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
+html, body {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
+main {
+  flex-grow: 1;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 5px;
+  background: #E0E0E0;
+  width: 0%;
+}
+
+/* 4 blocks of code below are my workaround for navbar going offscreen for IE 11. Now all buttons are visible */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 1200px) {
+  .navbar {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 1200px) and (min-width: 992px) {
+  .navbar {
+    max-width: 960px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 992px) and (min-width: 768px) {
+  .navbar {
+    max-width: 720px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 768px) and (min-width: 576px) {
+  .navbar {
+    max-width: 540px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+/* My workaround for IE bug where pages with screenshots would be extra long */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .screenshot {
+    max-height: 380px;
+  }
+}
+
+/* My workaround for JavaScript not running on IE - hides contribution graph */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .contributions-graphs {
+    display: none !important;
+  }
+}
+
+/* My workaround for dropdown going offscreen on mobile in landscape */
+@media screen and (max-width: 992px) {
+  .navbar-nav>.dropdown {
+    max-height: 75vh;
+    height: auto;
+    overflow-x: hidden;
+  }
+}
