@@ -48,7 +48,6 @@
       </div>
     </div>
   </nav>
-  <div class="progress-bar fixed-top" id="progressBar"></div>
 
   <main class="mt-5">
     <div class="container mt-4 cv-container">
@@ -221,20 +220,6 @@
         <a href="https://github.com/LayoutXML"><i class="fab fa-github footer-button float-right mr-3"></i></a></p>
     </div>
   </footer>
-
-  <!-- JavaScript from https://www.w3schools.com/howto/howto_js_scroll_indicator.asp -->
-  <script type="text/javascript">
-    window.onscroll = function() {
-      myFunction()
-    };
-
-    function myFunction() {
-      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var scrolled = (winScroll / height) * 100;
-      document.getElementById("progressBar").style.width = scrolled + "%";
-    }
-  </script>
 
   <!-- Bootstrap JavaScript -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

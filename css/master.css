@@ -156,7 +156,7 @@ main {
   width: 0%;
 }
 
-/* 4 bloks of code below is my workaround for navbar going offscreen for IE 11. Now all buttons are visible */
+/* 4 blocks of code below are my workaround for navbar going offscreen for IE 11. Now all buttons are visible */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 1200px) {
   .navbar {
     max-width: 1140px;
