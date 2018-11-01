@@ -77,7 +77,7 @@ a>.card-img-top {
   border-bottom: 2px solid #9E9E9E;
 }
 
-.cv-name > h1 {
+.cv-name>h1 {
   font-family: 'Chivo', sans-serif;
   font-weight: 900;
   font-size: 3rem;
@@ -85,7 +85,7 @@ a>.card-img-top {
   line-height: 2.5rem;
 }
 
-.cv-title > h2 {
+.cv-title>h2 {
   font-family: 'Chivo', sans-serif;
   font-weight: 300;
   font-size: 1.75rem;
@@ -93,35 +93,42 @@ a>.card-img-top {
   color: #424242;
 }
 
-.cv-subtitle > p {
-    font-family: 'Overpass', sans-serif;
-    font-weight: 300;
-    font-size: 1.05rem;
-    color: #424242;
+.cv-subtitle>p {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 300;
+  font-size: 1.05rem;
+  color: #424242;
 }
 
-.cv-category-title > h3 {
-    font-family: 'Chivo', sans-serif;
-    font-weight: 900;
-    color: #212121;
+.cv-category-title>h3 {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 900;
+  color: #212121;
 }
 
-.cv-category-content > h4, .cv-category-content > h4 > a {
-    font-family: 'Chivo', sans-serif;
-    font-weight: 700;
-    color: #212121;
+.cv-category-content>h4 {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 700;
+  color: #212121;
 }
 
-.cv-category-content > h5 {
-    font-family: 'Overpass', sans-serif;
-    font-weight: 400;
-    color: #212121;
+.cv-category-content>h4>a {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 700;
+  color: #212121;
+  text-decoration: underline;
 }
 
-.cv-category-content > p {
-    font-family: 'Overpass', sans-serif;
-    font-weight: 400;
-    color: #424242;
+.cv-category-content>h5 {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  color: #212121;
+}
+
+.cv-category-content>p {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  color: #424242;
 }
 
 .btn-contact {
@@ -151,35 +158,35 @@ main {
 
 /* 4 bloks of code below is my workaround for navbar going offscreen for IE 11. Now all buttons are visible */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 1200px) {
-   .navbar {
-     max-width: 1140px;
-     margin: 0 auto;
-     width: 100%;
-   }
+  .navbar {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 1200px) and (min-width: 992px) {
-   .navbar {
-     max-width: 960px;
-     margin: 0 auto;
-     width: 100%;
-   }
+  .navbar {
+    max-width: 960px;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 992px) and (min-width: 768px) {
-   .navbar {
-     max-width: 720px;
-     margin: 0 auto;
-     width: 100%;
-   }
+  .navbar {
+    max-width: 720px;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 768px) and (min-width: 576px) {
-   .navbar {
-     max-width: 540px;
-     margin: 0 auto;
-     width: 100%;
-   }
+  .navbar {
+    max-width: 540px;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 /* My workaround for IE bug where pages with screenshots would be extra long */
@@ -193,5 +200,14 @@ main {
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .contributions-graphs {
     display: none !important;
+  }
+}
+
+/* My workaround for dropdown going offscreen on mobile in landscape */
+@media screen and (max-width: 992px) {
+  .navbar-nav>.dropdown {
+    max-height: 75vh;
+    height: auto;
+    overflow-x: hidden;
   }
 }
