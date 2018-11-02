@@ -1,9 +1,10 @@
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 title: Rokas Jankunas
 description: Rokas Jankunas (LayoutXML) projects and contact information
-url: layoutxml.com
+url: "https://layoutxml.com"
 author: Rokas Jankunas
 logo: /data/avatar.png
 social:
