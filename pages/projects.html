@@ -18,43 +18,11 @@ permalink: /projects/
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="/">Rokas Jankunas</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="/projects" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/projects">All</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/projects/applistmanager">AppListManager</a>
-              <a class="dropdown-item" href="/projects/listlauncher">List-Launcher</a>
-              <a class="dropdown-item" href="/projects/sabs">SABS</a>
-              <a class="dropdown-item" href="/projects/ticktock">TickTock Wear</a>
-              <a class="dropdown-item" href="/projects/twelveish">Twelveish</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about">About Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  {% include navbar.html %}
 
   <main class="mt-5">
     <div class="container mt-4">
-      <h2 class="mb-3"><i class="fas fa-code"></i> Recent projects</h2>
+      <h2 class="mb-3"><i class="fas fa-code pr-2"></i>Recent projects</h2>
       <div class="card-deck d-flex flex-wrap-reverse">
         <!-- Project #1 -->
         <div class="card card-background mb-4">
@@ -112,14 +80,7 @@ permalink: /projects/
   </main>
 
   <!-- Footer -->
-  <footer class="footer bg-dark mt-5 pt-4 pb-2">
-    <div class="container">
-      <p class="text-light text-left">© Rokas Jankunas 2018
-        <a href="https://www.linkedin.com/in/jankunasrokas/"><i class="fab fa-linkedin footer-button float-right ml-3"></i></a>
-        <a href="https://play.google.com/store/apps/dev?id=9095680560714446900"><i class="fab fa-google-play footer-button float-right ml-3 mr-3"></i></a>
-        <a href="https://github.com/LayoutXML"><i class="fab fa-github footer-button float-right mr-3"></i></a></p>
-    </div>
-  </footer>
+  {% include footer.html %}  
 
   <!-- Bootstrap JavaScript -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
