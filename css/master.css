@@ -147,6 +147,10 @@ a>.card-img-top {
   color: #212121;
 }
 
+.dropdown-item {
+  max-width: none !important;
+}
+
 /* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
 html, body {
   width: 100%;
