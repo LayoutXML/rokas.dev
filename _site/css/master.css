@@ -137,14 +137,16 @@ a>.card-img-top {
 }
 
 .contact-h3 {
-  font-family: 'Chivo', sans-serif;
   color: #212121;
 }
 
 .contact-h3>a {
   text-decoration: underline;
-  font-family: 'Chivo', sans-serif;
   color: #212121;
+}
+
+.dropdown-item {
+  max-width: none !important;
 }
 
 /* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
