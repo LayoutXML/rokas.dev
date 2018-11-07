@@ -1,8 +1,7 @@
 /* Originally from https://github.com/IonicaBizau/github-calendar, modified to fit my needs */
 .calendar {
   width: 100%;
-  border: 1px solid #DDDDDD;
-  border-radius: 3px;
+  border-radius: .3rem;
   min-height: 243px;
   text-align: center;
   margin: 0 auto;

@@ -47,6 +47,7 @@ a>.card-img-top {
   .fbml {
     margin-left: 1rem !important;
   }
+
   .fbmr {
     margin-right: 1rem !important;
   }
@@ -56,6 +57,7 @@ a>.card-img-top {
   .fbml {
     margin-left: .5rem !important;
   }
+
   .fbmr {
     margin-right: .5rem !important;
   }
@@ -165,6 +167,16 @@ a>.card-img-top {
 
 .dropdown-item {
   max-width: none !important;
+}
+
+.position-relative>.border {
+  border: 0 !important;
+  border-top: 1px solid #dee2e6 !important;
+}
+
+.contributions-graphs>.card {
+  border-radius: .3rem;
+  overflow: hidden;
 }
 
 /* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */

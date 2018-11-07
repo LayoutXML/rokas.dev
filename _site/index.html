@@ -63,11 +63,13 @@
 
     <!-- Contribution graph using https://github.com/IonicaBizau/github-calendar. Hidden on small and extra small devices -->
     <div class="container mt-5 d-none d-md-block contributions-graphs">
-      <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
-      <div class="calendar pt-2">Loading contribution graph</div>
-      <script>
-        new GitHubCalendar(".calendar", "layoutxml");
-      </script>
+      <div class="card">
+        <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
+        <div class="calendar pt-2">Loading contribution graph</div>
+        <script>
+          new GitHubCalendar(".calendar", "layoutxml");
+        </script>
+      </div>
     </div>
 
     <!-- Pinned projects -->
