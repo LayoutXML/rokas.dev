@@ -264,3 +264,7 @@ main {
     margin-top: 1rem!important;
   }
 }
+
+#pinned-projects-title {
+  display: inline;
+}
