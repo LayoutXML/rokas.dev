@@ -52,17 +52,17 @@ permalink: /about/
           </div>
           <div class="cv-category-content mt-3">
             <h4><a href="https://booster.io/">Booster.io</a></h4>
-            <h5>Customer Support Agent • May, 2018 - Present</h5>
+            <h5 class="cv-job-subtext" id="booster-duration"><strong>Customer Support Agent</strong> • May, 2018 - Present</h5>
             <p>Booster for Woocommerce (WordPress plugin) customer support.</p>
           </div>
           <div class="cv-category-content mt-5">
             <h4><a href="https://www.alphacatum.lt/index.php?lang=en">Alpha Catum</a></h4>
-            <h5>Team Member • Jan, 2016 - Aug, 2018</h5>
-            <p>I have been responsible for website administration and development, setting up computers, installing software and other IT tasks. Also helped with international events organizing and other administrative tasks.</p>
+            <h5 class="cv-job-subtext" id="alphacatum-duration"><strong>Team Member</strong> • Jan, 2016 - Aug, 2018</h5>
+            <p>I have been responsible for website administration and development, setting up computers, installing software and other IT tasks. Also helped with organizing international events and other administrative tasks.</p>
           </div>
           <div class="cv-category-content mt-5">
             <h4><a href="https://www.atea.com/">Atea</a></h4>
-            <h5>Programmer Trainee • Jun, 2017</h5>
+            <h5 class="cv-job-subtext" id="atea-duration"><strong>Programmer Trainee</strong> • Jun, 2017</h5>
             <p>Training on user interface (UI) and automated user interface testing.</p>
           </div>
         </div>
@@ -179,6 +179,33 @@ permalink: /about/
 
   <!-- Footer -->
   {% include footer.html %}
+
+  <script type="text/javascript">
+    function monthDiff(date1, date2) {
+      var months;
+      months = (date2.getFullYear() - date1.getFullYear()) * 12;
+      months -= date1.getMonth();
+      months += date2.getMonth()+1;
+      return months <= 0 ? 0 : months;
+    }
+    function monthsToMonthsAndYears(months) {
+      var years = parseInt(months/12);
+      if (years>0) {
+        months-=years*12;
+        if (months>0) {
+          return years+" years "+months+" months";
+        } else {
+          return years+" years";
+        }
+      } else {
+          return months+" months";
+      }
+    }
+    var today = new Date();
+    document.getElementById('booster-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2018, 05, 01),new Date(today.getFullYear(), today.getMonth(), 31))) + ")";
+    document.getElementById('alphacatum-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2016, 01, 01),new Date(2018, 08, 01))) + ")";
+    document.getElementById('atea-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2017, 06, 01),new Date(2017,06,31))) + ")";
+  </script>
 
   <!-- Bootstrap JavaScript -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
