@@ -195,12 +195,12 @@ permalink: /about/
       if (years > 0) {
         months -= years * 12;
         if (months > 0) {
-          return years + " years " + months + " months";
+          return years + ((years>1) ? " years " : " year ") + months + ((months>1) ? " months" : " month");
         } else {
-          return years + " years";
+          return years + ((years>1) ? " years" : "year");
         }
       } else {
-        return months + " months";
+        return months + ((months>1) ? " months" : " month");
       }
     }
     var today = new Date();
