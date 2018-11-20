@@ -218,31 +218,33 @@
 </footer>
 
 
+  <!-- My JavaScript that calculates job durations and shows it next to dates -->
   <script type="text/javascript">
     function monthDiff(date1, date2) {
       var months;
       months = (date2.getFullYear() - date1.getFullYear()) * 12;
       months -= date1.getMonth();
-      months += date2.getMonth()+1;
+      months += date2.getMonth() + 1;
       return months <= 0 ? 0 : months;
     }
+
     function monthsToMonthsAndYears(months) {
-      var years = parseInt(months/12);
-      if (years>0) {
-        months-=years*12;
-        if (months>0) {
-          return years+" years "+months+" months";
+      var years = parseInt(months / 12);
+      if (years > 0) {
+        months -= years * 12;
+        if (months > 0) {
+          return years + " years " + months + " months";
         } else {
-          return years+" years";
+          return years + " years";
         }
       } else {
-          return months+" months";
+        return months + " months";
       }
     }
     var today = new Date();
-    document.getElementById('booster-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2018, 05, 01),new Date(today.getFullYear(), today.getMonth(), 31))) + ")";
-    document.getElementById('alphacatum-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2016, 01, 01),new Date(2018, 08, 01))) + ")";
-    document.getElementById('atea-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2017, 06, 01),new Date(2017,06,31))) + ")";
+    document.getElementById('booster-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2018, 05, 01), new Date(today.getFullYear(), today.getMonth(), 31))) + ")";
+    document.getElementById('alphacatum-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2016, 01, 01), new Date(2018, 08, 01))) + ")";
+    document.getElementById('atea-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2017, 06, 01), new Date(2017, 06, 31))) + ")";
   </script>
 
   <!-- Bootstrap JavaScript -->
