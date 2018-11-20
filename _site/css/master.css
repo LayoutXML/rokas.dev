@@ -144,6 +144,18 @@ a>.card-img-top {
   color: #212121;
 }
 
+.cv-job-subtext {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  color: #757575 !important;
+}
+
+.cv-job-subtext>strong {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  color: #212121;
+}
+
 .cv-category-content>p {
   font-family: 'Overpass', sans-serif;
   font-weight: 400;
