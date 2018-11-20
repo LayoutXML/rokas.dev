@@ -1,13 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Chivo:300,700,900|Overpass:300,400');
 
-/* Background image on jumbotron (on the main page) */
+/* Main page customizations: */
 .jumbotron-main {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../data/background.jpg") bottom;
   background-size: cover;
   color: #ffffff;
 }
 
-/* Restrict the image (logo) size for cards */
+.contributions-graphs>.card {
+  border-radius: .3rem;
+  overflow: hidden;
+}
+
+#pinned-projects-title {
+  display: inline;
+}
+
+/* Card customizations: */
 .card-img-top {
   width: 180px;
   height: 180px;
@@ -15,28 +24,24 @@
   margin: 0 auto;
 }
 
-/* Aligning image (logo) to center for cards */
 a>.card-img-top {
   text-align: center;
   margin: 0 auto;
 }
 
-/* Restricting card width so that images (logos) wouldn't leave the card borders */
 .card {
   min-width: 200px;
 }
 
-/* Adding a background color to cards top parts */
 .card-background {
   background-color: #eeeeee;
 }
 
-/* Changing background color to cards main pats */
 .card-body {
   background-color: #ffffff;
 }
 
-/* Size and color for footer buttons */
+/* Footer customizations: */
 .footer-button {
   color: #ffffff;
   font-size: 18pt;
@@ -62,6 +67,18 @@ a>.card-img-top {
   }
 }
 
+html, body {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* CV/About page customizations: */
 .cv-container {
   max-width: 725px;
 }
@@ -167,6 +184,7 @@ a>.card-img-top {
   color: #000000;
 }
 
+/* Contact page customizations: */
 .contact-h3 {
   color: #212121;
 }
@@ -176,45 +194,16 @@ a>.card-img-top {
   color: #212121;
 }
 
-.dropdown-item {
-  max-width: none !important;
-}
-
-.position-relative>.border {
-  border: 0 !important;
-  border-top: 1px solid #dee2e6 !important;
-}
-
-.contributions-graphs>.card {
-  border-radius: .3rem;
-  overflow: hidden;
-}
-
+/* Project pages customizations: */
 .screenshot {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
-/* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
-html, body {
-  width: 100%;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+/* Workarounds and bug fixes for various mobiles and internet explorer */
+.dropdown-item {
+  max-width: none !important;
 }
 
-/* Necessary for sticking footer to the bottom of the page (if page is smaller than window height, then to the bottom of the window) inspired by https://stackoverflow.com/questions/44700068/flexbox-min-height-and-ie11 */
-main {
-  flex-grow: 1;
-}
-
-/* The progress bar (scroll indicator) */
-.progress-bar {
-  height: 5px;
-  background: #E0E0E0;
-  width: 0%;
-}
-
-/* 4 blocks of code below are my workaround for navbar going offscreen for IE 11. Now all buttons are visible */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 1200px) {
   .navbar {
     max-width: 1140px;
@@ -247,21 +236,18 @@ main {
   }
 }
 
-/* My workaround for IE bug where pages with screenshots would be extra long */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .screenshot {
     max-height: 380px;
   }
 }
 
-/* My workaround for JavaScript not running on IE - hides contribution graph */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .contributions-graphs {
     display: none !important;
   }
 }
 
-/* My workaround for dropdown going offscreen on mobile in landscape */
 @media screen and (max-width: 992px) {
   .navbar-nav>.dropdown {
     max-height: 75vh;
@@ -274,8 +260,4 @@ main {
   .screenshot {
     margin-top: 1rem !important;
   }
-}
-
-#pinned-projects-title {
-  display: inline;
 }
