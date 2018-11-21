@@ -26,6 +26,7 @@ Features:
 * My own JavaScript that calculates how long I've been working at a company and shows that number in years and months next to dates.
 * Customized github calendar.
 * Responsive design.
+* Other small details such as tab icons and tab colors on Chrome on mobiles
 * Workarounds for mobile devices and internet explorer, namely:
     * Workaround for mobile devices in landscape that makes Bootstrap's dropdown go off screen.
     * Limiting navbar width for internet explorer that makes Bootstrap's navbar go off screen if it's width is set to 100% (on IE 11).
