@@ -152,35 +152,43 @@
           <div class="cv-category-title pt-2 pb-1">
             <h3>Skills</h3>
           </div>
-          <div class="cv-category-content mt-3">
-            <p>C++</p>
-          </div>
-          <div class="cv-category-content mt-3">
-            <p>Java</p>
-          </div>
-          <div class="cv-category-content mt-3">
-            <p>HTML</p>
-          </div>
-          <div class="cv-category-content mt-3">
-            <p>CSS</p>
-          </div>
-          <div class="cv-category-content mt-3">
-            <p>Android Development</p>
-          </div>
-          <div class="cv-category-content mt-3">
-            <p>Microsoft Office (Word, Excel, PowerPoint)</p>
-          </div>
-          <div class="cv-category-content mt-3">
-            <p>GitHub (and Git)</p>
-          </div>
-          <div class="cv-category-content mt-3">
-            <p>WordPress</p>
-          </div>
-          <div class="cv-category-content mt-3">
-            <p>WooCommerce</p>
-          </div>
-          <div class="cv-category-content mt-3">
-            <p>Booster for WooCommerce</p>
+
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="cv-category-content mt-3">
+                <p>C++</p>
+              </div>
+              <div class="cv-category-content mt-3">
+                <p>Java</p>
+              </div>
+              <div class="cv-category-content mt-3">
+                <p>HTML</p>
+              </div>
+              <div class="cv-category-content mt-3">
+                <p>CSS</p>
+              </div>
+              <div class="cv-category-content mt-3">
+                <p>Android Development</p>
+              </div>
+              <div class="cv-category-content mt-3">
+                <p>Microsoft Office (Word, Excel, PowerPoint)</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6">
+              <div class="cv-category-content" id="cv-skills-columntop">
+                <p>GitHub (and Git)</p>
+              </div>
+              <div class="cv-category-content mt-3">
+                <p>WordPress</p>
+              </div>
+              <div class="cv-category-content mt-3">
+                <p>WooCommerce</p>
+              </div>
+              <div class="cv-category-content mt-3">
+                <p>Booster for WooCommerce</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -242,12 +250,12 @@
       if (years > 0) {
         months -= years * 12;
         if (months > 0) {
-          return years + ((years>1) ? " years " : " year ") + months + ((months>1) ? " months" : " month");
+          return years + ((years > 1) ? " years " : " year ") + months + ((months > 1) ? " months" : " month");
         } else {
-          return years + ((years>1) ? " years" : "year");
+          return years + ((years > 1) ? " years" : "year");
         }
       } else {
-        return months + ((months>1) ? " months" : " month");
+        return months + ((months > 1) ? " months" : " month");
       }
     }
     var today = new Date();
