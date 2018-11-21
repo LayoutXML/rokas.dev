@@ -189,8 +189,12 @@ main {
   color: #212121;
 }
 
-.contact-h3>a {
+ .contact-url {
   text-decoration: underline;
+  color: #009688;
+}
+
+.contact-icon>a>i {
   color: #212121;
 }
 
