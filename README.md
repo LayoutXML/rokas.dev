@@ -7,6 +7,7 @@ Technologies and frameworks used:
 * Jekyll, with these plugins:
     * jekyll-seo-tag
     * jekyll-sitemap
+* Google Analytics
 * github-calendar by IonicaBizau
 * Hosted on Github Pages
 

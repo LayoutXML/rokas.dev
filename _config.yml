@@ -2,8 +2,8 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-title: Rokas Jankunas
-description: Rokas Jankunas (LayoutXML) projects and contact information.
+title: Rokas Jankunas - Software Developer and Customer Support Agent
+description: Rokas Jankunas's (LayoutXML) projects and contact information.
 url: "https://rokasjankunas.com"
 author: Rokas Jankunas
 logo: /data/avatar.png
