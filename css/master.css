@@ -2,7 +2,7 @@
 
 /* Main page customizations: */
 .jumbotron-main {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../data/background.jpg") bottom;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../data/background.jpg") bottom, url("../data/background_low.jpg") bottom;
   background-size: cover;
   color: #ffffff;
 }
