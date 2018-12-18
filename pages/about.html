@@ -1,230 +1,207 @@
 ---
 permalink: /about/
 title: About
+layout: default
 ---
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!-- CV -->
+<main class="mt-5">
+  <div class="container mt-4 cv-container">
 
-<head>
-  {% include gtag %}
-  {% include head %}
-  {% seo %}
-</head>
-
-<body>
-
-  <!-- Navbar -->
-  {% include navbar.html %}
-
-  <!-- CV -->
-  <main class="mt-5">
-    <div class="container mt-4 cv-container">
-
-      <!-- Top part - name, title, short message -->
-      <div class="cv-top">
-        <img src="../data/avatar.jpg" alt="Rokas Jankunas avatar" class="cv-avatar">
-        <div class="cv-buttons text-center mt-3">
-          <a href="https://github.com/LayoutXML"><i class="fab fa-github cv-button fbmr"></i></a>
-          <a href="https://play.google.com/store/apps/dev?id=9095680560714446900"><i class="fab fa-google-play cv-button fbmr fbml"></i></a>
-          <a href="https://www.linkedin.com/in/jankunasrokas/"><i class="fab fa-linkedin cv-button fbml"></i></a>
-        </div>
-        <div class="cv-name text-center mt-1">
-          <h1>Rokas Jankunas</h1>
-        </div>
-        <div class="cv-title text-center pt-2 pb-1 mt-3">
-          <h2>Software Developer and Customer Support Agent</h2>
-        </div>
-        <div class="cv-subtitle mt-3">
-          <p>For the last 3 years I have been working with both startups and well established corporations. Currenctly I am a Customer Support
-            Agent at Booster.io. My personal projects have been featured on Lifehacker, Gizmodo and xda-developers, and have been downloaded more than 100,000 times.</p>
-        </div>
-        <div class="cv-contact mt-4">
-          <a class="btn btn-primary btn-contact btn-lg btn-raised pl-5 pr-5 pt-2 pb-2" href="/contact" role="button">Contact me</a>
-        </div>
+    <!-- Top part - name, title, short message -->
+    <div class="cv-top">
+      <img src="../data/avatar.jpg" alt="Rokas Jankunas avatar" class="cv-avatar">
+      <div class="cv-buttons text-center mt-3">
+        <a href="https://github.com/LayoutXML"><i class="fab fa-github cv-button fbmr"></i></a>
+        <a href="https://play.google.com/store/apps/dev?id=9095680560714446900"><i class="fab fa-google-play cv-button fbmr fbml"></i></a>
+        <a href="https://www.linkedin.com/in/jankunasrokas/"><i class="fab fa-linkedin cv-button fbml"></i></a>
       </div>
-
-      <!-- Main part - experience, education, projects, skills, recognition -->
-      <div class="cv-main">
-        <div class="cv-category mt-5">
-
-          <!-- Experience -->
-          <div class="cv-category-title pt-2 pb-1">
-            <h3>Experience</h3>
-          </div>
-          <div class="cv-category-content mt-3">
-            <h4><a href="https://booster.io/">Booster.io</a></h4>
-            <h5 class="cv-job-subtext" id="booster-duration"><strong>Customer Support Agent</strong> • May, 2018 - Present</h5>
-            <p>Booster for Woocommerce (WordPress plugin) customer support.</p>
-          </div>
-          <div class="cv-category-content mt-5">
-            <h4><a href="https://www.alphacatum.lt/index.php?lang=en">Alpha Catum</a></h4>
-            <h5 class="cv-job-subtext" id="alphacatum-duration"><strong>Team Member</strong> • Jan, 2016 - Aug, 2018</h5>
-            <p>I have been responsible for website administration and development, setting up computers, installing software and other IT tasks. Also helped with organizing international events and other administrative tasks.</p>
-          </div>
-          <div class="cv-category-content mt-5">
-            <h4><a href="https://www.atea.com/">Atea</a></h4>
-            <h5 class="cv-job-subtext" id="atea-duration"><strong>Programmer Trainee</strong> • Jun, 2017</h5>
-            <p>Training on user interface (UI) and automated user interface testing.</p>
-          </div>
-        </div>
-
-        <!-- Education -->
-        <div class="cv-category mt-5">
-          <div class="cv-category-title pt-2 pb-1">
-            <h3>Education</h3>
-          </div>
-          <div class="cv-category-content mt-3">
-            <h4>Vilnius Zirmunai Gymnasium (High School)</h4>
-            <h5>Certificate of Maturity (Brandos Atestatas) • 2018</h5>
-            <p>High School Diploma with 100 perfect score in Information Technology state exam, 100 in Mathematics state exam, 100 in English state exam and 10 perfect grade in the majority of subjects including Information Technology, Mathematics,
-              English, Physics, Russian, Geography and others.</p>
-          </div>
-        </div>
-
-        <!-- Projects -->
-        <div class="cv-category mt-5">
-          <div class="cv-category-title pt-2 pb-1">
-            <h3>Projects</h3>
-          </div>
-          <div class="cv-category-content mt-3">
-            <h4><a href="./projects/applistmanager.html">AppListManager (Android Library)</a></h4>
-            <h5>Java, Android</h5>
-            <p>AppListManager is an easy to use Android library, which minimizes developing time when working on application or activity lists.</p>
-          </div>
-          <div class="cv-category-content mt-5">
-            <h4><a href="./projects/twelveish.html">Twelveish for Wear OS</a></h4>
-            <h5>Java, Android Wear (Wear OS)</h5>
-            <p>Twelveish is a unique Wear OS (Android Wear) Watch Face that displays the approximate time in words (in multiple languages). More than 1,000 downloads on the Google Play store.</p>
-          </div>
-          <div class="cv-category-content mt-5">
-            <h4><a href="./projects/sabs.html">SABS - Simple Adblocker for Samsung</a></h4>
-            <h5>Java, Android</h5>
-            <p>SABS was a system-wide rootless adblocker, package disabler and a permission manager with more than 100,000 downloads.</p>
-          </div>
-          <div class="cv-category-content mt-5">
-            <h4><a href="./projects/ticktock.html">Ticktock Wear</a></h4>
-            <h5>Java, Android Wear (Wear OS)</h5>
-            <p>TickTock Wear adds a ticking sound to your Wear OS smart watch. Currently in alpha stage.</p>
-          </div>
-          <div class="cv-category-content mt-5">
-            <h4><a href="./projects/listlauncher.html">List-Launcher</a></h4>
-            <h5>Java, Android</h5>
-            <p>List-Launcher is an amoled Android launcher that displays applications in a list. Currently in alpha stage.</p>
-          </div>
-        </div>
-
-        <!-- Skills -->
-        <div class="cv-category mt-5">
-          <div class="cv-category-title pt-2 pb-1">
-            <h3>Skills</h3>
-          </div>
-
-          <div class="row">
-            <div class="col-12 col-sm-6">
-              <div class="cv-category-content mt-3">
-                <p>C++</p>
-              </div>
-              <div class="cv-category-content mt-3">
-                <p>Java</p>
-              </div>
-              <div class="cv-category-content mt-3">
-                <p>HTML</p>
-              </div>
-              <div class="cv-category-content mt-3">
-                <p>CSS</p>
-              </div>
-              <div class="cv-category-content mt-3">
-                <p>Microsoft Office (Word, Excel, PowerPoint)</p>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6">
-              <div class="cv-category-content" id="cv-skills-columntop">
-                <p>Android Development</p>
-              </div>
-              <div class="cv-category-content mt-3">
-                <p>GitHub (and Git)</p>
-              </div>
-              <div class="cv-category-content mt-3">
-                <p>WordPress</p>
-              </div>
-              <div class="cv-category-content mt-3">
-                <p>WooCommerce</p>
-              </div>
-              <div class="cv-category-content mt-3">
-                <p>Booster for WooCommerce</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Recognition -->
-        <div class="cv-categor mt-5">
-          <div class="cv-category-title pt-2 pb-1">
-            <h3>Recognition</h3>
-          </div>
-          <div class="cv-category-content mt-3">
-            <h4>Certificate of Appreciation</h4>
-            <h5>Prime Minister of Lithuania Saulius Skvernelis • Jul, 2018</h5>
-            <p>Certificate of Appreciation from the Prime Minister of Lithuania Saulius Skvernelis for the outstanding state exam and school results.</p>
-          </div>
-          <div class="cv-category-content mt-5">
-            <h4>Certificate of Appreciation</h4>
-            <h5>Capital of Lithuania Vilnius mayor Remigijus Šimašius • Jul, 2018</h5>
-            <p>Certificate of Appreciation from the capital of Lithuania Vilnius mayor Remigijus Šimašius for the outstanding state exam and school results.</p>
-          </div>
-          <div class="cv-category-content mt-5">
-            <h4>Top 10 Lithuanian Programmers-Students 2017 (Amongst 11th graders)</h4>
-            <h5>Lithuanian Students' Computer Science Olympiad (Lietuvos mokinių informatikos olimpiada) • Apr, 2017</h5>
-            <p>Olympiad consisted of 4 stages - Schools, Cities, Nation (I), Nation (II). All tasks were programming based (in C++). Only 10 best students were selected to compete in the last stage, one of whom was me. Both 11th graders and 12th
-              graders had the same tasks.</p>
-          </div>
-          <div class="cv-category-content mt-5">
-            <h4>3rd place in Lithuanian Students' Computer Science Olympiad City-wide round (capital Vilnius)</h4>
-            <h5>Secondary Education Division of the Education Culture and Sports Department of the Vilnius City Municipality Administration • 2017</h5>
-            <p>Second stage of Lithuanian Students' Computer Science Olympiad (Lietuvos mokinių Informatikos Olimpiada). All tasks were programming based (in C++).</p>
-          </div>
-        </div>
+      <div class="cv-name text-center mt-1">
+        <h1>Rokas Jankunas</h1>
       </div>
-
+      <div class="cv-title text-center pt-2 pb-1 mt-3">
+        <h2>Software Developer and Customer Support Agent</h2>
+      </div>
+      <div class="cv-subtitle mt-3">
+        <p>For the last 3 years I have been working with both startups and well established corporations. Currenctly I am a Customer Support
+          Agent at Booster.io. My personal projects have been featured on Lifehacker, Gizmodo and xda-developers, and have been downloaded more than 100,000 times.</p>
+      </div>
+      <div class="cv-contact mt-4">
+        <a class="btn btn-primary btn-contact btn-lg btn-raised pl-5 pr-5 pt-2 pb-2" href="/contact" role="button">Contact me</a>
+      </div>
     </div>
-  </main>
 
-  <!-- Footer -->
-  {% include footer.html %}
+    <!-- Main part - experience, education, projects, skills, recognition -->
+    <div class="cv-main">
+      <div class="cv-category mt-5">
 
-  <!-- My JavaScript that calculates job durations and shows it next to dates -->
-  <script type="text/javascript">
-    function monthDiff(date1, date2) {
-      var months;
-      months = (date2.getFullYear() - date1.getFullYear()) * 12;
-      months -= date1.getMonth();
-      months += date2.getMonth() + 1;
-      return months <= 0 ? 0 : months;
-    }
+        <!-- Experience -->
+        <div class="cv-category-title pt-2 pb-1">
+          <h3>Experience</h3>
+        </div>
+        <div class="cv-category-content mt-3">
+          <h4><a href="https://booster.io/">Booster.io</a></h4>
+          <h5 class="cv-job-subtext" id="booster-duration"><strong>Customer Support Agent</strong> • May, 2018 - Present</h5>
+          <p>Booster for Woocommerce (WordPress plugin) customer support.</p>
+        </div>
+        <div class="cv-category-content mt-5">
+          <h4><a href="https://www.alphacatum.lt/index.php?lang=en">Alpha Catum</a></h4>
+          <h5 class="cv-job-subtext" id="alphacatum-duration"><strong>Team Member</strong> • Jan, 2016 - Aug, 2018</h5>
+          <p>I have been responsible for website administration and development, setting up computers, installing software and other IT tasks. Also helped with organizing international events and other administrative tasks.</p>
+        </div>
+        <div class="cv-category-content mt-5">
+          <h4><a href="https://www.atea.com/">Atea</a></h4>
+          <h5 class="cv-job-subtext" id="atea-duration"><strong>Programmer Trainee</strong> • Jun, 2017</h5>
+          <p>Training on user interface (UI) and automated user interface testing.</p>
+        </div>
+      </div>
 
-    function monthsToMonthsAndYears(months) {
-      var years = parseInt(months / 12);
-      if (years > 0) {
-        months -= years * 12;
-        if (months > 0) {
-          return years + ((years > 1) ? " years " : " year ") + months + ((months > 1) ? " months" : " month");
-        } else {
-          return years + ((years > 1) ? " years" : "year");
-        }
+      <!-- Education -->
+      <div class="cv-category mt-5">
+        <div class="cv-category-title pt-2 pb-1">
+          <h3>Education</h3>
+        </div>
+        <div class="cv-category-content mt-3">
+          <h4>Vilnius Zirmunai Gymnasium (High School)</h4>
+          <h5>Certificate of Maturity (Brandos Atestatas) • 2018</h5>
+          <p>High School Diploma with 100 perfect score in Information Technology state exam, 100 in Mathematics state exam, 100 in English state exam and 10 perfect grade in the majority of subjects including Information Technology, Mathematics,
+            English, Physics, Russian, Geography and others.</p>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="cv-category mt-5">
+        <div class="cv-category-title pt-2 pb-1">
+          <h3>Projects</h3>
+        </div>
+        <div class="cv-category-content mt-3">
+          <h4><a href="./projects/applistmanager.html">AppListManager (Android Library)</a></h4>
+          <h5>Java, Android</h5>
+          <p>AppListManager is an easy to use Android library, which minimizes developing time when working on application or activity lists.</p>
+        </div>
+        <div class="cv-category-content mt-5">
+          <h4><a href="./projects/twelveish.html">Twelveish for Wear OS</a></h4>
+          <h5>Java, Android Wear (Wear OS)</h5>
+          <p>Twelveish is a unique Wear OS (Android Wear) Watch Face that displays the approximate time in words (in multiple languages). More than 1,000 downloads on the Google Play store.</p>
+        </div>
+        <div class="cv-category-content mt-5">
+          <h4><a href="./projects/sabs.html">SABS - Simple Adblocker for Samsung</a></h4>
+          <h5>Java, Android</h5>
+          <p>SABS was a system-wide rootless adblocker, package disabler and a permission manager with more than 100,000 downloads.</p>
+        </div>
+        <div class="cv-category-content mt-5">
+          <h4><a href="./projects/ticktock.html">Ticktock Wear</a></h4>
+          <h5>Java, Android Wear (Wear OS)</h5>
+          <p>TickTock Wear adds a ticking sound to your Wear OS smart watch. Currently in alpha stage.</p>
+        </div>
+        <div class="cv-category-content mt-5">
+          <h4><a href="./projects/listlauncher.html">List-Launcher</a></h4>
+          <h5>Java, Android</h5>
+          <p>List-Launcher is an amoled Android launcher that displays applications in a list. Currently in alpha stage.</p>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="cv-category mt-5">
+        <div class="cv-category-title pt-2 pb-1">
+          <h3>Skills</h3>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-sm-6">
+            <div class="cv-category-content mt-3">
+              <p>C++</p>
+            </div>
+            <div class="cv-category-content mt-3">
+              <p>Java</p>
+            </div>
+            <div class="cv-category-content mt-3">
+              <p>HTML</p>
+            </div>
+            <div class="cv-category-content mt-3">
+              <p>CSS</p>
+            </div>
+            <div class="cv-category-content mt-3">
+              <p>Microsoft Office (Word, Excel, PowerPoint)</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6">
+            <div class="cv-category-content" id="cv-skills-columntop">
+              <p>Android Development</p>
+            </div>
+            <div class="cv-category-content mt-3">
+              <p>GitHub (and Git)</p>
+            </div>
+            <div class="cv-category-content mt-3">
+              <p>WordPress</p>
+            </div>
+            <div class="cv-category-content mt-3">
+              <p>WooCommerce</p>
+            </div>
+            <div class="cv-category-content mt-3">
+              <p>Booster for WooCommerce</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recognition -->
+      <div class="cv-categor mt-5">
+        <div class="cv-category-title pt-2 pb-1">
+          <h3>Recognition</h3>
+        </div>
+        <div class="cv-category-content mt-3">
+          <h4>Certificate of Appreciation</h4>
+          <h5>Prime Minister of Lithuania Saulius Skvernelis • Jul, 2018</h5>
+          <p>Certificate of Appreciation from the Prime Minister of Lithuania Saulius Skvernelis for the outstanding state exam and school results.</p>
+        </div>
+        <div class="cv-category-content mt-5">
+          <h4>Certificate of Appreciation</h4>
+          <h5>Capital of Lithuania Vilnius mayor Remigijus Šimašius • Jul, 2018</h5>
+          <p>Certificate of Appreciation from the capital of Lithuania Vilnius mayor Remigijus Šimašius for the outstanding state exam and school results.</p>
+        </div>
+        <div class="cv-category-content mt-5">
+          <h4>Top 10 Lithuanian Programmers-Students 2017 (Amongst 11th graders)</h4>
+          <h5>Lithuanian Students' Computer Science Olympiad (Lietuvos mokinių informatikos olimpiada) • Apr, 2017</h5>
+          <p>Olympiad consisted of 4 stages - Schools, Cities, Nation (I), Nation (II). All tasks were programming based (in C++). Only 10 best students were selected to compete in the last stage, one of whom was me. Both 11th graders and 12th
+            graders had the same tasks.</p>
+        </div>
+        <div class="cv-category-content mt-5">
+          <h4>3rd place in Lithuanian Students' Computer Science Olympiad City-wide round (capital Vilnius)</h4>
+          <h5>Secondary Education Division of the Education Culture and Sports Department of the Vilnius City Municipality Administration • 2017</h5>
+          <p>Second stage of Lithuanian Students' Computer Science Olympiad (Lietuvos mokinių Informatikos Olimpiada). All tasks were programming based (in C++).</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- My JavaScript that calculates job durations and shows it next to dates -->
+<script type="text/javascript">
+  function monthDiff(date1, date2) {
+    var months;
+    months = (date2.getFullYear() - date1.getFullYear()) * 12;
+    months -= date1.getMonth();
+    months += date2.getMonth() + 1;
+    return months <= 0 ? 0 : months;
+  }
+
+  function monthsToMonthsAndYears(months) {
+    var years = parseInt(months / 12);
+    if (years > 0) {
+      months -= years * 12;
+      if (months > 0) {
+        return years + ((years > 1) ? " years " : " year ") + months + ((months > 1) ? " months" : " month");
       } else {
-        return months + ((months > 1) ? " months" : " month");
+        return years + ((years > 1) ? " years" : "year");
       }
+    } else {
+      return months + ((months > 1) ? " months" : " month");
     }
-    var today = new Date();
-    document.getElementById('booster-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2018, 05, 01), new Date(today.getFullYear(), today.getMonth(), 31))) + ")";
-    document.getElementById('alphacatum-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2016, 01, 01), new Date(2018, 08, 01))) + ")";
-    document.getElementById('atea-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2017, 06, 01), new Date(2017, 06, 31))) + ")";
-  </script>
-
-  <!-- Bootstrap JavaScript -->
-  {% include bootstrap_javascript %}
-  
-</body>
-
-</html>
+  }
+  var today = new Date();
+  document.getElementById('booster-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2018, 05, 01), new Date(today.getFullYear(), today.getMonth(), 31))) + ")";
+  document.getElementById('alphacatum-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2016, 01, 01), new Date(2018, 08, 01))) + ")";
+  document.getElementById('atea-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2017, 06, 01), new Date(2017, 06, 31))) + ")";
+</script>
