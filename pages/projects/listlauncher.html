@@ -1,93 +1,53 @@
 ---
 permalink: /projects/listlauncher/
+title: List-Launcher
+layout: default
 ---
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
 
-<head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130446859-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-130446859-1');
-  </script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Rokas Jankunas | List-Launcher</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../css/master.css">
-  <link rel="icon" type="image/png" href="../../data/avatar.png">
-  <meta name="theme-color" content="#424242" />
-  {% seo %}
-</head>
+<!-- Project information -->
+<main class="mt-5">
+  <div class="container mt-4">
+    <h2 class="mb-3">List-Launcher (unreleased)</h2>
 
-<body>
+    <div class="row mt-3">
+      <div class="col-12 col-md-8 mb-3">
 
-  <!-- Navbar -->
-  {% include navbar.html %}
-
-  <!-- Project information -->
-  <main class="mt-5">
-    <div class="container mt-4">
-      <h2 class="mb-3">List-Launcher (unreleased)</h2>
-
-      <div class="row mt-3">
-        <div class="col-12 col-md-8 mb-3">
-
-          <!-- Description -->
-          <div class="card">
-            <h5 class="card-header">Description</h5>
-            <div class="card-body p-4">
-              <p>
-                Work in progress - An Android launcher application. Currently in alpha stage.
-              </p>
-              <p>
-                A launcher application is an ambitious project which requires a lot of time, effort and knowledge. Therefore it's unclear whether or not this project will ever get published.
-              </p>
-              <p>
-                What I have already done:
-              </p>
-              <ol>
-                <li>Two screens, one of which at the moment is empty (displays only a wallpaper) and another which shows a full list of launcher activities.</li>
-                <li><a href="./applistmanager.html">Wrote an Android Library just so that I could retrieve these activities!</a> They also auto update.</li>
-                <li>Made application list functional - clicking on an application will open that application.</li>
-              </ol>
-              <p>
-                So if you were to compile and install this project on your Android device - it would work and you would be able to see your applications in an alphabetical order and launch them.
-              </p>
-            </div>
+        <!-- Description -->
+        <div class="card">
+          <h5 class="card-header">Description</h5>
+          <div class="card-body p-4">
+            <p>
+              Work in progress - An Android launcher application. Currently in alpha stage.
+            </p>
+            <p>
+              A launcher application is an ambitious project which requires a lot of time, effort and knowledge. Therefore it's unclear whether or not this project will ever get published.
+            </p>
+            <p>
+              What I have already done:
+            </p>
+            <ol>
+              <li>Two screens, one of which at the moment is empty (displays only a wallpaper) and another which shows a full list of launcher activities.</li>
+              <li><a href="./applistmanager.html">Wrote an Android Library just so that I could retrieve these activities!</a> They also auto update.</li>
+              <li>Made application list functional - clicking on an application will open that application.</li>
+            </ol>
+            <p>
+              So if you were to compile and install this project on your Android device - it would work and you would be able to see your applications in an alphabetical order and launch them.
+            </p>
           </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-
-          <!-- Links card -->
-          <div class="card">
-            <h5 class="card-header">Links</h5>
-            <div class="card-body">
-              <p><a href="https://github.com/LayoutXML/List-Launcher"><i class="fab fa-github mr-2"></i>Source Code (GitHub)</a></p>
-            </div>
-          </div>
-
         </div>
       </div>
+
+      <div class="col-12 col-md-4">
+
+        <!-- Links card -->
+        <div class="card">
+          <h5 class="card-header">Links</h5>
+          <div class="card-body">
+            <p><a href="https://github.com/LayoutXML/List-Launcher"><i class="fab fa-github mr-2"></i>Source Code (GitHub)</a></p>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </main>
-
-  <!-- Footer -->
-  {% include footer.html %}
-
-  <!-- Bootstrap JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-  <script>
-    $(document).ready(function() {
-      $('body').bootstrapMaterialDesign();
-    });
-  </script>
-</body>
-
-</html>
+  </div>
+</main>
