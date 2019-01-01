@@ -41,10 +41,18 @@ a>.card-img-top {
   background-color: #ffffff;
 }
 
+.featured-badge {
+  max-width: 180px;
+}
+
 /* Footer customizations: */
 .footer-button {
   color: #ffffff;
   font-size: 18pt;
+}
+
+footer {
+  padding: .5rem 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -214,41 +222,14 @@ main {
   }
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 1200px) {
-  .navbar {
-    max-width: 1140px;
-    margin: 0 auto;
-    width: 100%;
-  }
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 1200px) and (min-width: 992px) {
-  .navbar {
-    max-width: 960px;
-    margin: 0 auto;
-    width: 100%;
-  }
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 992px) and (min-width: 768px) {
-  .navbar {
-    max-width: 720px;
-    margin: 0 auto;
-    width: 100%;
-  }
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 768px) and (min-width: 576px) {
-  .navbar {
-    max-width: 540px;
-    margin: 0 auto;
-    width: 100%;
-  }
-}
-
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .screenshot {
     max-height: 380px;
+  }
+  .featured-badge {
+    max-width: 100%;
+    max-height: 10vh;
+    flex-shrink: 0;
   }
 }
 
