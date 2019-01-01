@@ -47,6 +47,10 @@ a>.card-img-top {
   font-size: 18pt;
 }
 
+footer {
+  padding: .5rem 1rem;
+}
+
 @media screen and (min-width: 768px) {
   .fbml {
     margin-left: 1rem !important;
@@ -211,38 +215,6 @@ main {
 @media screen and (min-width: 576px) {
   #cv-skills-columntop {
     margin-top: 1rem !important;
-  }
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 1200px) {
-  .navbar {
-    max-width: 1140px;
-    margin: 0 auto;
-    width: 100%;
-  }
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 1200px) and (min-width: 992px) {
-  .navbar {
-    max-width: 960px;
-    margin: 0 auto;
-    width: 100%;
-  }
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 992px) and (min-width: 768px) {
-  .navbar {
-    max-width: 720px;
-    margin: 0 auto;
-    width: 100%;
-  }
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 768px) and (min-width: 576px) {
-  .navbar {
-    max-width: 540px;
-    margin: 0 auto;
-    width: 100%;
   }
 }
 
