@@ -3,7 +3,7 @@ plugins:
   - jekyll-sitemap
 
 title: Rokas Jankunas - Software Developer and Customer Support Agent
-description: Rokas Jankunas's (LayoutXML) projects and contact information.
+description: Rokas Jankunas's (LayoutXML) projects: AppListManager, List-Launcher, SABS, TickTock Wear, Twelveish. hello@rokasjankunas.com. Rokas Jankunas's CV and contact details.
 url: "https://rokasjankunas.com"
 author: Rokas Jankunas
 logo: /data/avatar.png
@@ -15,4 +15,14 @@ social:
     - https://github.com/LayoutXML
     - https://play.google.com/store/apps/dev?id=9095680560714446900
     - http://rokasjankunas.com
+    - https://rokasjankunas.com
+    - https://play.google.com/store/apps/details?id=com.layoutxml.twelveish
+    - https://play.google.com/store/apps/details?id=com.layoutxml.support
+    - https://play.google.com/store/apps/details?id=com.rokasjankunas.ticktock
+    - https://play.google.com/store/apps/details?id=com.layoutxml.applistmanager
+    - https://github.com/LayoutXML/AppListManager
+    - https://github.com/LayoutXML/Twelveish
+    - https://github.com/LayoutXML/TickTock-Wear
+    - https://github.com/LayoutXML/List-Launcher
+    - https://github.com/LayoutXML/rokasjankunas.com
 google_site_verification: jX64q1Ukb9aWPnF5_6-G4wCK3XMeVwyvfrXUThXzwU0
