@@ -82,11 +82,31 @@ layout: default
           <h4><a href="./projects/twelveish.html">Twelveish for Wear OS</a></h4>
           <h5>Java, Android Wear (Wear OS)</h5>
           <p>Twelveish is a unique Wear OS (Android Wear) Watch Face that displays the approximate time in words (in multiple languages). More than 1,000 downloads on the Google Play store.</p>
+          <div class="container mb-3">
+            <div class="row">
+              <div class="col text-center align-items-end d-flex flex-wrap justify-content-center">
+                <img src="{{site.baseurl}}/data/badges/android_authority.png" alt="Android Authority logo" class="featured-badge mb-3">
+              </div>
+            </div>
+          </div>
         </div>
         <div class="cv-category-content mt-5">
           <h4><a href="./projects/sabs.html">SABS - Simple Adblocker for Samsung</a></h4>
           <h5>Java, Android</h5>
           <p>SABS was a system-wide rootless adblocker, package disabler and a permission manager with more than 100,000 downloads.</p>
+          <div class="container mb-3">
+            <div class="row">
+              <div class="col text-center align-items-end d-flex flex-wrap justify-content-center">
+                <img src="{{site.baseurl}}/data/badges/lifehacker.png" alt="Lifehacker logo" class="featured-badge mb-3">
+              </div>
+              <div class="col text-center align-items-end d-flex flex-wrap justify-content-center">
+                <img src="{{site.baseurl}}/data/badges/xda-developers.png" alt="xda-developers logo" class="featured-badge mb-3">
+              </div>
+              <div class="col text-center align-items-end d-flex flex-wrap justify-content-center">
+                <img src="{{site.baseurl}}/data/badges/gizmodo.png" alt="Gizmodo logo" class="featured-badge mb-3">
+              </div>
+            </div>
+          </div>
         </div>
         <div class="cv-category-content mt-5">
           <h4><a href="./projects/ticktock.html">Ticktock Wear</a></h4>
@@ -179,11 +199,14 @@ layout: default
 
 <!-- My JavaScript that calculates job durations and shows it next to dates -->
 <script type="text/javascript">
-  function monthDiff(date1, date2) {
+  function monthDiff(date1, date2, currentDate) {
     var months;
     months = (date2.getFullYear() - date1.getFullYear()) * 12;
     months -= date1.getMonth();
     months += date2.getMonth() + 1;
+    if (currentDate) {
+      months++;
+    }
     return months <= 0 ? 0 : months;
   }
 
@@ -201,7 +224,7 @@ layout: default
     }
   }
   var today = new Date();
-  document.getElementById('booster-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2018, 05, 01), new Date(today.getFullYear(), today.getMonth(), 31))) + ")";
-  document.getElementById('alphacatum-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2016, 01, 01), new Date(2018, 08, 01))) + ")";
-  document.getElementById('atea-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2017, 06, 01), new Date(2017, 06, 31))) + ")";
+  document.getElementById('booster-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2018, 05, 01), new Date(today.getFullYear(), today.getMonth(), 31), true)) + ")";
+  document.getElementById('alphacatum-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2016, 01, 01), new Date(2018, 08, 01), false)) + ")";
+  document.getElementById('atea-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2017, 06, 01), new Date(2017, 06, 31), false)) + ")";
 </script>
