@@ -29,7 +29,5 @@ Features:
 * Responsive design.
 * Other small details such as tab icons and tab colors on Chrome on mobiles
 * Workarounds for mobile devices and internet explorer, namely:
-    * Workaround for mobile devices in landscape that makes Bootstrap's dropdown go off screen.
-    * Limiting navbar width for internet explorer that makes Bootstrap's navbar go off screen if it's width is set to 100% (on IE 11).
     * Sticking footer to the bottom of the screen regardless of page (document) height with a workaround for internet explorer (without it, footer would stick to the top of the screen).
 * Custom domain and page urls (and without html extensions).
