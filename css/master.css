@@ -148,6 +148,10 @@ main {
   color: #424242;
 }
 
+.cv-list {
+  margin: 0;
+}
+
 .cv-category-title>h3 {
   font-family: 'Chivo', sans-serif;
   font-weight: 900;
