@@ -127,3 +127,8 @@ h2.f4.text-normal.mb-3 {
   border: 0 !important;
   border-top: 1px solid #dee2e6!important;
 }
+
+.js-calendar-graph-svg {
+  margin-left: auto;
+  margin-right: auto;
+}
