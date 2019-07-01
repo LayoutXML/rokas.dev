@@ -19,11 +19,10 @@ layout: default
         <h1>Rokas Jankunas</h1>
       </div>
       <div class="cv-title text-center pt-2 pb-1 mt-3">
-        <h2>Software developer featured on Lifehacker, Android Authority, xda-developers and Gizmodo</h2>
+        <h2>Full Stack Junior Developer, Student | Featured on Gizmodo, Lifehacker, Android Authority, XDA-Developers</h2>
       </div>
       <div class="cv-subtitle mt-3">
-        <p>For the last 4 years, I have been working with both startups and well established corporations. Currently I am a Customer Support
-          Agent at Booster.io. My personal projects have been featured on Lifehacker, Gizmodo and xda-developers, and have been downloaded more than 100,000 times.</p>
+        <p>For the last 4 years I have been helping companies and startups achieve their goals on time and with high quality. Working as a full stack junior developer, customer support agent, and programmer trainee I have increased invaluable industry knowledge.</p>
       </div>
       <div class="cv-contact mt-4">
         <a class="btn btn-primary btn-contact btn-lg btn-raised pl-5 pr-5 pt-2 pb-2" href="/contact" role="button">Contact me</a>
@@ -41,8 +40,8 @@ layout: default
         </div>
         <div class="cv-category-content mt-3">
           <h4>University of Dundee</h4>
-          <h5  class="cv-job-subtext"><strong>Computer Science Bsc (Hons)</strong> • 2018-Present (exp. 2022)</h5>
-          <p class="cv-list">Courses taken so far: Data Structures and Algorithms, Intro to Software Development, Web Authoring, Argumentation and Computers, Mathematics 1A & Mathematics 1B.</p>
+          <h5  class="cv-job-subtext"><strong>Computer Science - Bachelor of Science (BS)</strong> • 2018-Present (exp. 2022)</h5>
+          <p class="cv-list">#1 in my class (received an award)<br><br>Courses taken so far:<br>Data Structures and Algorithms, <br>Intro to Software Development, <br>Web Authoring, <br>Argumentation and Computers, <br>Mathematics 1A & Mathematics 1B.</p>
         </div>
       </div>
 
@@ -52,8 +51,13 @@ layout: default
           <h3>Work Experience</h3>
         </div>
         <div class="cv-category-content mt-3">
+          <h4>Junior Programmer (Full Stack)</h4>
+          <h5 class="cv-job-subtext" id="booster-duration"><strong>UAB Insoft</strong> • Jun, 2019 - Present (2 months+)</h5>
+          <p class="cv-list">Full stack junior programmer.</p>
+        </div>
+        <div class="cv-category-content mt-5">
           <h4>Customer Support</h4>
-          <h5 class="cv-job-subtext" id="booster-duration"><strong>Booster.io</strong> • May, 2018 - Present</h5>
+          <h5 class="cv-job-subtext" id="booster-duration"><strong>Booster.io</strong> • May, 2018 - Present (1 year, 3 months+)</h5>
           <p class="cv-list">Provided support for WordPress, WooCommerce and Booster for WooCommerce.</p>
           <p class="cv-list">Wrote documentation based on PHP code.</p>
           <p class="cv-list">Tracked and reported bugs.</p>
@@ -61,7 +65,7 @@ layout: default
         </div>
         <div class="cv-category-content mt-5">
           <h4>Team Member</h4>
-          <h5 class="cv-job-subtext" id="alphacatum-duration"><strong>Alpha Catum</strong> • Jan, 2016 - Aug, 2018</h5>
+          <h5 class="cv-job-subtext" id="alphacatum-duration"><strong>Alpha Catum</strong> • Jan, 2016 - Aug, 2018 (2 years 8 months)</h5>
           <p class="cv-list">Used CSS, JavaScript and HTML to satisfy user requirements for proprietary software.</p>
           <p class="cv-list">Organized international and local events.</p>
           <p class="cv-list">Set up software, hardware and troubleshooting it.</p>
@@ -140,37 +144,37 @@ layout: default
               <p>Java</p>
             </div>
             <div class="cv-category-content mt-3">
-              <p>C++</p>
-            </div>
-            <div class="cv-category-content mt-3">
-              <p>JavaScript</p>
+              <p>Git</p>
             </div>
             <div class="cv-category-content mt-3">
               <p>CSS</p>
             </div>
             <div class="cv-category-content mt-3">
-              <p>HTML</p>
+              <p>Android Development</p>
             </div>
             <div class="cv-category-content mt-3">
-              <p>Microsoft Office (Word, Excel, PowerPoint)</p>
+              <p>Dagger</p>
+            </div>
+            <div class="cv-category-content mt-3">
+              <p>C++</p>
             </div>
           </div>
 
           <div class="col-12 col-sm-6">
             <div class="cv-category-content" id="cv-skills-columntop">
-              <p>Android Development</p>
+              <p>Angular</p>
             </div>
             <div class="cv-category-content mt-3">
-              <p>GitHub (and Git)</p>
+              <p>Spring Boot</p>
             </div>
             <div class="cv-category-content mt-3">
-              <p>WordPress</p>
+              <p>Spring Data JPA</p>
             </div>
             <div class="cv-category-content mt-3">
               <p>WooCommerce</p>
             </div>
             <div class="cv-category-content mt-3">
-              <p>Booster for WooCommerce</p>
+              <p>REST API</p>
             </div>
             <div class="cv-category-content mt-3">
               <p>Linux</p>
@@ -210,34 +214,3 @@ layout: default
 
   </div>
 </main>
-
-<!-- My JavaScript that calculates job durations and shows it next to dates -->
-<script type="text/javascript">
-  function monthDiff(date1, date2, currentDate) {
-    var months;
-    months = (date2.getFullYear() - date1.getFullYear()) * 12;
-    months -= date1.getMonth();
-    months += date2.getMonth() + 1;
-    if (currentDate) {
-      months++;
-    }
-    return months <= 0 ? 0 : months;
-  }
-
-  function monthsToMonthsAndYears(months) {
-    var years = parseInt(months / 12);
-    if (years > 0) {
-      months -= years * 12;
-      if (months > 0) {
-        return years + ((years > 1) ? " years " : " year ") + months + ((months > 1) ? " months" : " month");
-      } else {
-        return years + ((years > 1) ? " years" : "year");
-      }
-    } else {
-      return months + ((months > 1) ? " months" : " month");
-    }
-  }
-  var today = new Date();
-  document.getElementById('booster-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2018, 05, 01), new Date(today.getFullYear(), today.getMonth(), 31), true)) + ")";
-  document.getElementById('alphacatum-duration').innerHTML += " (" + monthsToMonthsAndYears(monthDiff(new Date(2016, 01, 01), new Date(2018, 08, 01), false)) + ")";
-</script>
