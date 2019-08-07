@@ -14,17 +14,10 @@ Technologies and frameworks used:
 Features:
 * Pages:
     * Home page;
-    * Projects pages:
-        * All projects;
-        * AppListManager project page;
-        * List-Launcher project page;
-        * SABS project page;
-        * TickTock Wear project page;
-        * Twelveish project page;
+    * Projects pages;
     * About me (CV) page;
     * Contact page;
     * 404 page (page not found).
-* My own JavaScript that calculates how long I've been working at a company and shows that number in years and months next to dates.
 * Customized github calendar.
 * Responsive design.
 * Other small details such as tab icons and tab colors on Chrome on mobiles
