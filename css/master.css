@@ -37,7 +37,13 @@ a>.card-img-top {
   min-width: 200px;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 768px) {
+  .card-deck .card {
+    max-width: calc(33% - 30px);
+  }
+}
+
+@media screen and (min-width: 992px) {
   .card-deck .card {
     max-width: calc(25% - 30px);
   }
