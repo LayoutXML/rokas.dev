@@ -5,7 +5,7 @@
 <div class="card-deck d-flex flex-wrap mt-3">
 
   <!-- Project #1 -->
-  <div class="card card-background" [class.mb-4]="isExpanded">
+  <div class="card card-background" [class.mb-4]="isExpanded || (screenWidth >= 576 && screenWidth < 768)">
     <a href="/projects/applistmanager" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/applistmanager.png" alt="Rokas Jankunas | AppListManager"></a>
     <div class="card-body d-flex flex-column rounded">
       <h5 class="card-title">AppListManager</h5>
@@ -16,7 +16,7 @@
 
 
   <!-- Project #2 -->
-  <div class="card card-background" [class.mb-4]="isExpanded">
+  <div class="card card-background" [class.mb-4]="isExpanded || (screenWidth >= 576 && screenWidth < 768)">
     <a href="/projects/twelveish" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/twelveish.png" alt="Rokas Jankunas | Twelveish"></a>
     <div class="card-body d-flex flex-column rounded">
       <h5 class="card-title">Twelveish</h5>
@@ -60,7 +60,7 @@
 
 
   <!-- Project #4 -->
-  <div class="card card-background" [class.mb-4]="isExpanded">
+  <div class="card card-background" [class.mb-4]="(isExpanded && screenWidth >= 992) || (isExpanded && screenWidth < 768)" *ngIf="isExpanded || screenWidth >= 992">
     <a href="/projects/ticktock" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/ticktock.png" alt="Rokas Jankunas | TickTock Wear"></a>
     <div class="card-body d-flex flex-column rounded">
       <h5 class="card-title">TickTock Wear</h5>
@@ -79,4 +79,5 @@
   </div>
 
 </div>
-<div #expandButton class="btn btn-link" role="button" (click)="this.isExpanded = !this.isExpanded">{{isExpanded ? 'See less' : 'See more'}}</div>
+<div class="btn btn-link" role="button" (click)="this.isExpanded = !this.isExpanded">{{isExpanded ? 'Show less' : 'Show more'}}
+  <fa-icon [icon]="isExpanded ? upIcon : downIcon" class="ml-1 pt-1"></fa-icon></div>
