@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {faGithub, faGooglePlay, faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-about',
@@ -6,6 +7,9 @@ import {Component} from '@angular/core';
   styleUrls: ['./about.component.less']
 })
 export class AboutComponent {
+  faGithub = faGithub;
+  faGooglePlay = faGooglePlay;
+  faLinkedin = faLinkedinIn;
 
   constructor() {
   }
