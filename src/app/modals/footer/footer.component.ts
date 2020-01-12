@@ -10,6 +10,7 @@ export class FooterComponent {
   faLinkedin = faLinkedinIn;
   faGooglePlay = faGooglePlay;
   faGithub = faGithub;
+  date = new Date();
 
   constructor() {
   }

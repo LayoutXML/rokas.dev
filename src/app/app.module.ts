@@ -10,6 +10,7 @@ import {ContactComponent} from './modals/contact/contact.component';
 import {NavbarComponent} from './modals/navbar/navbar.component';
 import {FooterComponent} from './modals/footer/footer.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
   imports: [
     BrowserModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
