@@ -12,11 +12,4 @@ export class ProjectsComponent {
   constructor() {
   }
 
-  expand(element: HTMLElement): void {
-    this.isExpanded = !this.isExpanded;
-    setTimeout(() => { // on the next tick
-      element.scrollIntoView({behavior: 'smooth'});
-    });
-  }
-
 }
