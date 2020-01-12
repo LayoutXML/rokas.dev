@@ -3,8 +3,8 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { IntroComponent } from './modals/intro/intro.component';
-import { ProjectsComponent } from './modals/projects/projects.component';
+import {IntroComponent} from './modals/intro/intro.component';
+import {ProjectsComponent} from './modals/projects/projects.component';
 
 @NgModule({
   declarations: [
