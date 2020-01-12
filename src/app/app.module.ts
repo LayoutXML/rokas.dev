@@ -5,12 +5,14 @@ import {AppComponent} from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {IntroComponent} from './modals/intro/intro.component';
 import {ProjectsComponent} from './modals/projects/projects.component';
+import { AboutComponent } from './modals/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IntroComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
