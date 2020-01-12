@@ -1,4 +1,4 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {AfterViewInit, Component, HostListener} from '@angular/core';
 import {NavigationStart, Router} from '@angular/router';
 
 @Component({
@@ -10,6 +10,8 @@ export class AppComponent implements AfterViewInit {
   isFirstEvent = true;
   extraHeight = 64;
   extraHeightAdjusted = 8;
+  lastScroll: string;
+  lastTime = Date.now();
 
   constructor(private router: Router) {
   }
@@ -52,5 +54,20 @@ export class AppComponent implements AfterViewInit {
         }
       }
     });
+  }
+
+  onScroll(location) {
+    const now = Date.now();
+    if (now - this.lastTime > 100) {
+      if (location !== this.lastScroll) {
+        window.history.pushState(null, null, location);
+      }
+      this.lastTime = now;
+    }
+  }
+
+  @HostListener('scroll', ['$event'])
+  onElementScroll(event) {
+    console.log(event);
   }
 }

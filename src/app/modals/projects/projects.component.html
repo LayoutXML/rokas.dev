@@ -1,83 +1,85 @@
 <!--suppress HtmlUnknownTarget -->
 <!-- Card title and button -->
-<h2>Personal Projects</h2>
+<div class="container">
+  <h2>Personal Projects</h2>
 
-<div class="card-deck d-flex flex-wrap mt-3">
+  <div class="card-deck d-flex flex-wrap mt-3">
 
-  <!-- Project #1 -->
-  <div class="card card-background" [class.mb-4]="isExpanded || (screenWidth >= 576 && screenWidth < 768)">
-    <a routerLink="/projects/applistmanager" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/applistmanager.png" alt="Rokas Jankunas | AppListManager"></a>
-    <div class="card-body d-flex flex-column rounded">
-      <h5 class="card-title">AppListManager</h5>
-      <p class="card-text mb-5">AppListManager is an easy to use Android library, which minimizes developing time when working on application or activity lists.</p>
-      <a routerLink="/projects/applistmanager" class="btn btn-primary mt-auto mr-auto mb-0">Read more</a>
+    <!-- Project #1 -->
+    <div class="card card-background" [class.mb-4]="isExpanded || (screenWidth >= 576 && screenWidth < 768)">
+      <a routerLink="/projects/applistmanager" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/applistmanager.png" alt="Rokas Jankunas | AppListManager"></a>
+      <div class="card-body d-flex flex-column rounded">
+        <h5 class="card-title">AppListManager</h5>
+        <p class="card-text mb-5">AppListManager is an easy to use Android library, which minimizes developing time when working on application or activity lists.</p>
+        <a routerLink="/projects/applistmanager" class="btn btn-primary mt-auto mr-auto mb-0">Read more</a>
+      </div>
     </div>
-  </div>
 
 
-  <!-- Project #2 -->
-  <div class="card card-background" [class.mb-4]="isExpanded || (screenWidth >= 576 && screenWidth < 768)">
-    <a routerLink="/projects/twelveish" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/twelveish.png" alt="Rokas Jankunas | Twelveish"></a>
-    <div class="card-body d-flex flex-column rounded">
-      <h5 class="card-title">Twelveish</h5>
-      <p class="card-text mb-3">Twelveish is a unique Wear OS (Android Wear) Watch Face that displays the approximate time in words (in multiple languages).</p>
-      <p class="card-text mb-3 font-weight-bold">As featured in:</p>
-      <div class="container mb-3">
-        <div class="row">
-          <div class="col text-center align-items-end d-flex flex-wrap justify-content-center">
-            <a routerLink="/projects/twelveish"><img src="assets/badges/android_authority.png" alt="Android Authority logo" class="featured-badge mb-3"></a>
+    <!-- Project #2 -->
+    <div class="card card-background" [class.mb-4]="isExpanded || (screenWidth >= 576 && screenWidth < 768)">
+      <a routerLink="/projects/twelveish" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/twelveish.png" alt="Rokas Jankunas | Twelveish"></a>
+      <div class="card-body d-flex flex-column rounded">
+        <h5 class="card-title">Twelveish</h5>
+        <p class="card-text mb-3">Twelveish is a unique Wear OS (Android Wear) Watch Face that displays the approximate time in words (in multiple languages).</p>
+        <p class="card-text mb-3 font-weight-bold">As featured in:</p>
+        <div class="container mb-3">
+          <div class="row">
+            <div class="col text-center align-items-end d-flex flex-wrap justify-content-center">
+              <a routerLink="/projects/twelveish"><img src="assets/badges/android_authority.png" alt="Android Authority logo" class="featured-badge mb-3"></a>
+            </div>
           </div>
         </div>
+        <a routerLink="/projects/twelveish" class="btn btn-primary mt-auto mr-auto mb-0">Read more</a>
       </div>
-      <a routerLink="/projects/twelveish" class="btn btn-primary mt-auto mr-auto mb-0">Read more</a>
     </div>
-  </div>
 
 
-  <!-- Project #3 -->
-  <div class="card card-background" [class.mb-4]="isExpanded">
-    <a routerLink="/projects/sabs" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/sabs.png" alt="Rokas Jankunas | SABS"></a>
-    <div class="card-body d-flex flex-column rounded">
-      <h5 class="card-title">SABS</h5>
-      <p class="card-text mb-3">SABS was a system-wide rootless adblocker, package disabler and a permission manager with more than 100,000 downloads.</p>
-      <p class="card-text mb-3 font-weight-bold">As featured in:</p>
-      <div class="container mb-3">
-        <div class="row">
-          <div class="col text-center align-items-end d-flex flex-wrap justify-content-center">
-            <a routerLink="/projects/sabs"><img src="assets/badges/lifehacker.png" alt="Lifehacker logo" class="featured-badge mb-3"></a>
-          </div>
-          <div class="col text-center align-items-end d-flex flex-wrap justify-content-center">
-            <a routerLink="/projects/sabs"><img src="assets/badges/xda-developers.png" alt="xda-developers logo" class="featured-badge mb-3"></a>
-          </div>
-          <div class="col text-center align-items-end d-flex flex-wrap justify-content-center">
-            <a routerLink="/projects/sabs"><img src="assets/badges/gizmodo.png" alt="Gizmodo logo" class="featured-badge mb-3"></a>
+    <!-- Project #3 -->
+    <div class="card card-background" [class.mb-4]="isExpanded">
+      <a routerLink="/projects/sabs" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/sabs.png" alt="Rokas Jankunas | SABS"></a>
+      <div class="card-body d-flex flex-column rounded">
+        <h5 class="card-title">SABS</h5>
+        <p class="card-text mb-3">SABS was a system-wide rootless adblocker, package disabler and a permission manager with more than 100,000 downloads.</p>
+        <p class="card-text mb-3 font-weight-bold">As featured in:</p>
+        <div class="container mb-3">
+          <div class="row">
+            <div class="col text-center align-items-end d-flex flex-wrap justify-content-center">
+              <a routerLink="/projects/sabs"><img src="assets/badges/lifehacker.png" alt="Lifehacker logo" class="featured-badge mb-3"></a>
+            </div>
+            <div class="col text-center align-items-end d-flex flex-wrap justify-content-center">
+              <a routerLink="/projects/sabs"><img src="assets/badges/xda-developers.png" alt="xda-developers logo" class="featured-badge mb-3"></a>
+            </div>
+            <div class="col text-center align-items-end d-flex flex-wrap justify-content-center">
+              <a routerLink="/projects/sabs"><img src="assets/badges/gizmodo.png" alt="Gizmodo logo" class="featured-badge mb-3"></a>
+            </div>
           </div>
         </div>
+        <a routerLink="/projects/sabs" class="btn btn-primary mt-auto mr-auto mb-0">Read more</a>
       </div>
-      <a routerLink="/projects/sabs" class="btn btn-primary mt-auto mr-auto mb-0">Read more</a>
     </div>
-  </div>
 
 
-  <!-- Project #4 -->
-  <div class="card card-background" [class.mb-4]="(isExpanded && screenWidth >= 992) || (isExpanded && screenWidth < 768)" *ngIf="isExpanded || screenWidth >= 992">
-    <a routerLink="/projects/ticktock" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/ticktock.png" alt="Rokas Jankunas | TickTock Wear"></a>
-    <div class="card-body d-flex flex-column rounded">
-      <h5 class="card-title">TickTock Wear</h5>
-      <p class="card-text mb-5">TickTock Wear adds a ticking sound to your Wear OS smart watch.</p>
-      <a routerLink="/projects/ticktock" class="btn btn-primary mt-auto mr-auto mb-0">Read more</a>
+    <!-- Project #4 -->
+    <div class="card card-background" [class.mb-4]="(isExpanded && screenWidth >= 992) || (isExpanded && screenWidth < 768)" *ngIf="isExpanded || screenWidth >= 992">
+      <a routerLink="/projects/ticktock" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/ticktock.png" alt="Rokas Jankunas | TickTock Wear"></a>
+      <div class="card-body d-flex flex-column rounded">
+        <h5 class="card-title">TickTock Wear</h5>
+        <p class="card-text mb-5">TickTock Wear adds a ticking sound to your Wear OS smart watch.</p>
+        <a routerLink="/projects/ticktock" class="btn btn-primary mt-auto mr-auto mb-0">Read more</a>
+      </div>
     </div>
-  </div>
 
-  <div class="card card-background" *ngIf="isExpanded">
-    <a routerLink="/projects/listlauncher" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/empty_icon.png" alt="Rokas Jankunas | List-Launcher"></a>
-    <div class="card-body d-flex flex-column rounded">
-      <h5 class="card-title">List-Launcher</h5>
-      <p class="card-text mb-5">List-Launcher is an amoled Android launcher that displays applications in a list. Currently in alpha stage.</p>
-      <a routerLink="/projects/listlauncher" class="btn btn-primary mt-auto mr-auto mb-0">Read more</a>
+    <div class="card card-background" *ngIf="isExpanded">
+      <a routerLink="/projects/listlauncher" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/empty_icon.png" alt="Rokas Jankunas | List-Launcher"></a>
+      <div class="card-body d-flex flex-column rounded">
+        <h5 class="card-title">List-Launcher</h5>
+        <p class="card-text mb-5">List-Launcher is an amoled Android launcher that displays applications in a list. Currently in alpha stage.</p>
+        <a routerLink="/projects/listlauncher" class="btn btn-primary mt-auto mr-auto mb-0">Read more</a>
+      </div>
     </div>
-  </div>
 
+  </div>
+  <div class="btn btn-link" role="button" (click)="this.isExpanded = !this.isExpanded">{{isExpanded ? 'Show less' : 'Show more'}}
+    <fa-icon [icon]="isExpanded ? upIcon : downIcon" class="ml-1 pt-1"></fa-icon></div>
 </div>
-<div class="btn btn-link" role="button" (click)="this.isExpanded = !this.isExpanded">{{isExpanded ? 'Show less' : 'Show more'}}
-  <fa-icon [icon]="isExpanded ? upIcon : downIcon" class="ml-1 pt-1"></fa-icon></div>

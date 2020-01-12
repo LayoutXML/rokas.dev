@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
-<div class="container pt-5">
+<div class="pt-5">
   <app-intro></app-intro>
-  <app-projects id="projects"></app-projects>
-  <app-about id="about"></app-about>
-  <app-contact id="contacts"></app-contact>
+  <app-projects id="projects" (wheel)="onScroll('projects')"></app-projects>
+  <app-about id="about" (wheel)="onScroll('about')"></app-about>
+  <app-contact id="contacts" (wheel)="onScroll('contacts')"></app-contact>
 </div>
 <app-footer></app-footer>
