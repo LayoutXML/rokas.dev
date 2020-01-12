@@ -3,3 +3,30 @@
   background-size: cover;
   color: #ffffff;
 }
+
+h1 {
+  overflow: hidden;
+  border-right: .15em solid transparent;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end),
+  blinking .75s step-end 7;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blinking {
+  from, to {
+    border-color: #ffffff
+  }
+  50% {
+    border-color: transparent;
+  }
+}
