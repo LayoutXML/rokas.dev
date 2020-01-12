@@ -6,13 +6,15 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {IntroComponent} from './modals/intro/intro.component';
 import {ProjectsComponent} from './modals/projects/projects.component';
 import { AboutComponent } from './modals/about/about.component';
+import { ContactComponent } from './modals/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IntroComponent,
     ProjectsComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
