@@ -65,7 +65,7 @@ export class AppComponent implements AfterViewInit {
   @HostListener('window:scroll', ['$event'])
   onElementScroll(event) {
     const now = Date.now();
-    if (now - this.lastTime > 300) {
+    if (now - this.lastTime > 500) {
       const scrollPosition = document.documentElement.scrollTop;
       const screenHeight = window.innerHeight;
       const scrollHeight = document.body.offsetHeight;
