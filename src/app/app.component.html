@@ -1,6 +1,6 @@
-<app-navbar></app-navbar>
+<app-navbar [activeUrl]="activeUrl"></app-navbar>
 <div class="pt-5">
-  <app-intro></app-intro>
+  <app-intro (wheel)="onScroll('')"></app-intro>
   <app-projects id="projects" (wheel)="onScroll('projects')"></app-projects>
   <app-about id="about" (wheel)="onScroll('about')"></app-about>
   <app-contact id="contacts" (wheel)="onScroll('contacts')"></app-contact>

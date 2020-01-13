@@ -10,8 +10,8 @@ export class AppComponent implements AfterViewInit {
   isFirstEvent = true;
   extraHeight = 64;
   extraHeightAdjusted = 8;
-  lastScroll: string;
   lastTime = Date.now();
+  activeUrl: string;
 
   constructor(private router: Router) {
   }
@@ -19,6 +19,7 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
+        this.activeUrl = event.url;
         switch (event.url) {
           case '/projects':
             setTimeout(() => {
@@ -58,16 +59,12 @@ export class AppComponent implements AfterViewInit {
 
   onScroll(location) {
     const now = Date.now();
-    if (now - this.lastTime > 100) {
-      if (location !== this.lastScroll) {
+    if (now - this.lastTime > 50) {
+      if (('/' + location) !== this.activeUrl) {
         window.history.pushState(null, null, location);
+        this.activeUrl = '/' + location;
       }
       this.lastTime = now;
     }
-  }
-
-  @HostListener('scroll', ['$event'])
-  onElementScroll(event) {
-    console.log(event);
   }
 }
