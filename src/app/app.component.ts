@@ -11,8 +11,8 @@ export class AppComponent implements AfterViewInit {
   isFirstEvent = true;
   extraHeight = 64;
   extraHeightAdjusted = 8;
-  lastTime = Date.now();
   activeUrl: string;
+  scrollTimer;
 
   constructor(private router: Router) {
   }
@@ -64,29 +64,33 @@ export class AppComponent implements AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
   onElementScroll(event) {
-    const now = Date.now();
-    if (now - this.lastTime > 500) {
-      const scrollPosition = document.documentElement.scrollTop;
-      const screenHeight = window.innerHeight;
-      const scrollHeight = document.body.offsetHeight;
-      const homeElement = document.getElementById('home');
-      const projectsElement = document.getElementById('projects');
-      const aboutElement = document.getElementById('about');
-      const contactsElement = document.getElementById('contacts');
-      if (scrollPosition === 0 || AppComponent.compareHeights(scrollPosition, 0, homeElement.offsetTop + homeElement.offsetHeight)) {
-        window.history.pushState(null, null, '');
-        this.activeUrl = '/';
-      } else if (AppComponent.compareHeights(scrollPosition, projectsElement.offsetTop, projectsElement.offsetHeight)) {
-        window.history.pushState(null, null, 'projects');
-        this.activeUrl = '/projects';
-      } else if (scrollPosition + screenHeight < scrollHeight - this.extraHeight && AppComponent.compareHeights(scrollPosition, aboutElement.offsetTop, aboutElement.offsetHeight)) {
-        window.history.pushState(null, null, 'about');
-        this.activeUrl = '/about';
-      } else if (scrollPosition + screenHeight >= scrollHeight - this.extraHeight || AppComponent.compareHeights(scrollPosition, contactsElement.offsetTop, contactsElement.offsetHeight)) {
-        window.history.pushState(null, null, 'contacts');
-        this.activeUrl = '/contacts';
-      }
-      this.lastTime = now;
+    clearTimeout(this.scrollTimer);
+    this.scrollTimer = setTimeout(() => {
+      this.handleScroll();
+    }, 300);
+  }
+
+  handleScroll() {
+    this.scrollTimer = null;
+    const scrollPosition = document.documentElement.scrollTop;
+    const screenHeight = window.innerHeight;
+    const scrollHeight = document.body.offsetHeight;
+    const homeElement = document.getElementById('home');
+    const projectsElement = document.getElementById('projects');
+    const aboutElement = document.getElementById('about');
+    const contactsElement = document.getElementById('contacts');
+    if (scrollPosition === 0 || AppComponent.compareHeights(scrollPosition, 0, homeElement.offsetTop + homeElement.offsetHeight)) {
+      window.history.pushState(null, null, '');
+      this.activeUrl = '/';
+    } else if (AppComponent.compareHeights(scrollPosition, projectsElement.offsetTop, projectsElement.offsetHeight)) {
+      window.history.pushState(null, null, 'projects');
+      this.activeUrl = '/projects';
+    } else if (scrollPosition + screenHeight < scrollHeight - this.extraHeight && AppComponent.compareHeights(scrollPosition, aboutElement.offsetTop, aboutElement.offsetHeight)) {
+      window.history.pushState(null, null, 'about');
+      this.activeUrl = '/about';
+    } else if (scrollPosition + screenHeight >= scrollHeight - this.extraHeight || AppComponent.compareHeights(scrollPosition, contactsElement.offsetTop, contactsElement.offsetHeight)) {
+      window.history.pushState(null, null, 'contacts');
+      this.activeUrl = '/contacts';
     }
   }
 }
