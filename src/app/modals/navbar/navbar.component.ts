@@ -8,10 +8,26 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 })
 export class NavbarComponent {
   isMenuCollapsed = true;
+  isLocked = false;
+  url: string;
 
-  @Input() activeUrl: string;
+  @Input()
+  set activeUrl(url: string) {
+    if (!this.isLocked) {
+      this.url = url;
+    }
+  }
 
   constructor() {
+  }
+
+  onClick(url: string) {
+    this.isLocked = true;
+    this.url = '/' + url;
+    window.history.pushState(null, null, url);
+    setTimeout(() => {
+      this.isLocked = false;
+    }, 1000);
   }
 
 }
