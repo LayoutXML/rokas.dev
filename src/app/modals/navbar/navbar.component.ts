@@ -6,6 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./navbar.component.less']
 })
 export class NavbarComponent {
+  isMenuCollapsed = true;
 
   constructor() {
   }
