@@ -4,7 +4,7 @@
           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" (click)="isMenuCollapsed = !isMenuCollapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse"[ngbCollapse]="isMenuCollapsed" id="navbarNavAltMarkup">
+  <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
       <a class="nav-item nav-link" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}">Home</a>
       <a class="nav-item nav-link" routerLinkActive="active" routerLink="/projects">Projects</a>
