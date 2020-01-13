@@ -7,6 +7,7 @@ import {NavigationStart, Router} from '@angular/router';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements AfterViewInit {
+
   isFirstEvent = true;
   extraHeight = 64;
   extraHeightAdjusted = 8;
@@ -14,6 +15,10 @@ export class AppComponent implements AfterViewInit {
   activeUrl: string;
 
   constructor(private router: Router) {
+  }
+
+  static compareHeights(scrollPosition, elementTop, elementHeight) {
+    return scrollPosition < elementTop + elementHeight && scrollPosition > elementTop;
   }
 
   ngAfterViewInit(): void {
@@ -57,12 +62,29 @@ export class AppComponent implements AfterViewInit {
     });
   }
 
-  onScroll(location) {
+  @HostListener('window:scroll', ['$event'])
+  onElementScroll(event) {
     const now = Date.now();
-    if (now - this.lastTime > 50) {
-      if (('/' + location) !== this.activeUrl) {
-        window.history.pushState(null, null, location);
-        this.activeUrl = '/' + location;
+    if (now - this.lastTime > 300) {
+      const scrollPosition = document.documentElement.scrollTop;
+      const screenHeight = window.innerHeight;
+      const scrollHeight = document.body.offsetHeight;
+      const homeElement = document.getElementById('home');
+      const projectsElement = document.getElementById('projects');
+      const aboutElement = document.getElementById('about');
+      const contactsElement = document.getElementById('contacts');
+      if (scrollPosition === 0 || AppComponent.compareHeights(scrollPosition, 0, homeElement.offsetTop + homeElement.offsetHeight)) {
+        window.history.pushState(null, null, '');
+        this.activeUrl = '/';
+      } else if (AppComponent.compareHeights(scrollPosition, projectsElement.offsetTop, projectsElement.offsetHeight)) {
+        window.history.pushState(null, null, 'projects');
+        this.activeUrl = '/projects';
+      } else if (scrollPosition + screenHeight < scrollHeight - this.extraHeight && AppComponent.compareHeights(scrollPosition, aboutElement.offsetTop, aboutElement.offsetHeight)) {
+        window.history.pushState(null, null, 'about');
+        this.activeUrl = '/about';
+      } else if (scrollPosition + screenHeight >= scrollHeight - this.extraHeight || AppComponent.compareHeights(scrollPosition, contactsElement.offsetTop, contactsElement.offsetHeight)) {
+        window.history.pushState(null, null, 'contacts');
+        this.activeUrl = '/contacts';
       }
       this.lastTime = now;
     }
