@@ -10,7 +10,6 @@ export class AppComponent implements AfterViewInit {
 
   isFirstEvent = true;
   extraHeight = 64;
-  extraHeightAdjusted = 8;
   activeUrl: string;
   scrollTimer;
 
@@ -39,7 +38,7 @@ export class AppComponent implements AfterViewInit {
             setTimeout(() => {
               const aboutElement = document.getElementById('about');
               if (aboutElement) {
-                window.scrollTo({top: aboutElement.offsetTop - this.extraHeightAdjusted, behavior: 'smooth'});
+                window.scrollTo({top: aboutElement.offsetTop - this.extraHeight, behavior: 'smooth'});
                 this.isFirstEvent = false;
               }
             }, this.isFirstEvent ? 1000 : 1);
@@ -48,7 +47,7 @@ export class AppComponent implements AfterViewInit {
             setTimeout(() => {
               const contactsElement = document.getElementById('contacts');
               if (contactsElement) {
-                window.scrollTo({top: contactsElement.offsetTop - this.extraHeightAdjusted, behavior: 'smooth'});
+                window.scrollTo({top: contactsElement.offsetTop - this.extraHeight, behavior: 'smooth'});
                 this.isFirstEvent = false;
               }
             }, this.isFirstEvent ? 1000 : 1);
