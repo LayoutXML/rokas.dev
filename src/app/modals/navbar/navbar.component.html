@@ -6,10 +6,10 @@
   </button>
   <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
-      <a class="nav-item nav-link" [class.active]="url === '/'" routerLink="/" (click)="onClick('')">Home</a>
-      <a class="nav-item nav-link" [class.active]="url === '/projects'" routerLink="/projects" (click)="onClick('projects')">Projects</a>
-      <a class="nav-item nav-link" [class.active]="url === '/about'" routerLink="/about" (click)="onClick('about')">About</a>
-      <a class="nav-item nav-link" [class.active]="url === '/contacts'" routerLink="/contacts" (click)="onClick('contacts')">Contacts</a>
+      <a class="nav-item nav-link" [class.active]="(url | async) === '/'" (click)="onClick('/')">Home</a>
+      <a class="nav-item nav-link" [class.active]="(url | async) === '/projects'" (click)="onClick('/projects')">Projects</a>
+      <a class="nav-item nav-link" [class.active]="(url | async) === '/about'" (click)="onClick('/about')">About</a>
+      <a class="nav-item nav-link" [class.active]="(url | async) === '/contacts'" (click)="onClick('/contacts')">Contacts</a>
     </div>
   </div>
 </nav>

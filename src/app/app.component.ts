@@ -1,5 +1,6 @@
-import {AfterViewInit, Component, HostListener} from '@angular/core';
+import {AfterViewInit, Component, HostListener, ViewChild} from '@angular/core';
 import {NavigationStart, Router} from '@angular/router';
+import {NavbarComponent} from './modals/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
@@ -8,55 +9,32 @@ import {NavigationStart, Router} from '@angular/router';
 })
 export class AppComponent implements AfterViewInit {
 
+  static extraHeight = 64;
   isFirstEvent = true;
-  extraHeight = 64;
   activeUrl: string;
   scrollTimer;
+
+  @ViewChild(NavbarComponent, {static: false}) navbar: NavbarComponent;
 
   constructor(private router: Router) {
   }
 
   static compareHeights(scrollPosition, elementTop, elementHeight) {
-    return scrollPosition < elementTop + elementHeight && scrollPosition > elementTop;
+    return scrollPosition + AppComponent.extraHeight < elementTop + elementHeight && scrollPosition > elementTop;
   }
 
   ngAfterViewInit(): void {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         this.activeUrl = event.url;
-        switch (event.url) {
-          case '/projects':
-            setTimeout(() => {
-              const projectsElement = document.getElementById('projects');
-              if (projectsElement) {
-                window.scrollTo({top: projectsElement.offsetTop - this.extraHeight, behavior: 'smooth'});
-                this.isFirstEvent = false;
-              }
-            }, this.isFirstEvent ? 1000 : 1);
-            break;
-          case '/about':
-            setTimeout(() => {
-              const aboutElement = document.getElementById('about');
-              if (aboutElement) {
-                window.scrollTo({top: aboutElement.offsetTop - this.extraHeight, behavior: 'smooth'});
-                this.isFirstEvent = false;
-              }
-            }, this.isFirstEvent ? 1000 : 1);
-            break;
-          case '/contacts':
-            setTimeout(() => {
-              const contactsElement = document.getElementById('contacts');
-              if (contactsElement) {
-                window.scrollTo({top: contactsElement.offsetTop - this.extraHeight, behavior: 'smooth'});
-                this.isFirstEvent = false;
-              }
-            }, this.isFirstEvent ? 1000 : 1);
-            break;
-          default:
-            window.scrollTo({top: 0, behavior: 'smooth'});
-            this.isFirstEvent = false;
-            break;
-        }
+        this.doScroll();
+      }
+    });
+
+    this.navbar.url.subscribe(url => {
+      if (url && this.activeUrl !== url) {
+        this.activeUrl = url;
+        this.doScroll();
       }
     });
   }
@@ -69,6 +47,42 @@ export class AppComponent implements AfterViewInit {
     }, 300);
   }
 
+  doScroll() {
+    switch (this.activeUrl) {
+      case '/projects':
+        setTimeout(() => {
+          const projectsElement = document.getElementById('projects');
+          if (projectsElement) {
+            window.scrollTo({top: projectsElement.offsetTop - AppComponent.extraHeight, behavior: 'smooth'});
+            this.isFirstEvent = false;
+          }
+        }, this.isFirstEvent ? 1000 : 1);
+        break;
+      case '/about':
+        setTimeout(() => {
+          const aboutElement = document.getElementById('about');
+          if (aboutElement) {
+            window.scrollTo({top: aboutElement.offsetTop - AppComponent.extraHeight, behavior: 'smooth'});
+            this.isFirstEvent = false;
+          }
+        }, this.isFirstEvent ? 1000 : 1);
+        break;
+      case '/contacts':
+        setTimeout(() => {
+          const contactsElement = document.getElementById('contacts');
+          if (contactsElement) {
+            window.scrollTo({top: contactsElement.offsetTop - AppComponent.extraHeight, behavior: 'smooth'});
+            this.isFirstEvent = false;
+          }
+        }, this.isFirstEvent ? 1000 : 1);
+        break;
+      default:
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        this.isFirstEvent = false;
+        break;
+    }
+  }
+
   handleScroll() {
     this.scrollTimer = null;
     const scrollPosition = document.documentElement.scrollTop;
@@ -79,16 +93,16 @@ export class AppComponent implements AfterViewInit {
     const aboutElement = document.getElementById('about');
     const contactsElement = document.getElementById('contacts');
     if (scrollPosition === 0 || AppComponent.compareHeights(scrollPosition, 0, homeElement.offsetTop + homeElement.offsetHeight)) {
-      window.history.pushState(null, null, '');
+      window.history.replaceState(null, null, '');
       this.activeUrl = '/';
     } else if (AppComponent.compareHeights(scrollPosition, projectsElement.offsetTop, projectsElement.offsetHeight)) {
-      window.history.pushState(null, null, 'projects');
+      window.history.replaceState(null, null, 'projects');
       this.activeUrl = '/projects';
-    } else if (scrollPosition + screenHeight < scrollHeight - this.extraHeight && AppComponent.compareHeights(scrollPosition, aboutElement.offsetTop, aboutElement.offsetHeight)) {
-      window.history.pushState(null, null, 'about');
+    } else if (scrollPosition + screenHeight < scrollHeight - AppComponent.extraHeight && AppComponent.compareHeights(scrollPosition, aboutElement.offsetTop, aboutElement.offsetHeight)) {
+      window.history.replaceState(null, null, 'about');
       this.activeUrl = '/about';
-    } else if (scrollPosition + screenHeight >= scrollHeight - this.extraHeight || AppComponent.compareHeights(scrollPosition, contactsElement.offsetTop, contactsElement.offsetHeight)) {
-      window.history.pushState(null, null, 'contacts');
+    } else if (scrollPosition + screenHeight >= scrollHeight - AppComponent.extraHeight || AppComponent.compareHeights(scrollPosition, contactsElement.offsetTop, contactsElement.offsetHeight)) {
+      window.history.replaceState(null, null, 'contacts');
       this.activeUrl = '/contacts';
     }
   }

@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -9,12 +10,12 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 export class NavbarComponent {
   isMenuCollapsed = true;
   isLocked = false;
-  url: string;
+  url: BehaviorSubject<string> = new BehaviorSubject<string>(null);
 
   @Input()
   set activeUrl(url: string) {
     if (!this.isLocked) {
-      this.url = url;
+      this.url.next(url);
     }
   }
 
@@ -23,8 +24,8 @@ export class NavbarComponent {
 
   onClick(url: string) {
     this.isLocked = true;
-    this.url = '/' + url;
-    window.history.pushState(null, null, url);
+    this.url.next(url);
+    window.history.replaceState(null, null, url);
     setTimeout(() => {
       this.isLocked = false;
     }, 1000);
