@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AppComponent} from './app.component';
+import {MainComponent} from './pages/main/main.component';
 
 const routes: Routes = [
-  {path: '', runGuardsAndResolvers: 'always', component: AppComponent},
+  {path: '', runGuardsAndResolvers: 'always', component: MainComponent},
   {path: 'home', runGuardsAndResolvers: 'always', redirectTo: '/'},
-  {path: 'projects', runGuardsAndResolvers: 'always', component: AppComponent},
-  {path: 'about', runGuardsAndResolvers: 'always', component: AppComponent},
-  {path: 'contacts', runGuardsAndResolvers: 'always', component: AppComponent},
+  {path: 'projects', runGuardsAndResolvers: 'always', component: MainComponent},
+  {path: 'about', runGuardsAndResolvers: 'always', component: MainComponent},
+  {path: 'contacts', runGuardsAndResolvers: 'always', component: MainComponent},
   {path: '**', redirectTo: '/', pathMatch: 'full'}
 ];
 
