@@ -34,7 +34,7 @@ export class RoutingService {
     }
   }
 
-  doScroll() {
+  private doScroll() {
     switch (this.activeUrl.getValue()) {
       case '/projects':
         setTimeout(() => {

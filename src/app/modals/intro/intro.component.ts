@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {RoutingService} from '../../services/routing.service';
 
 @Component({
   selector: 'app-intro',
@@ -7,6 +8,6 @@ import {Component} from '@angular/core';
 })
 export class IntroComponent {
 
-  constructor() {
+  constructor(private routingService: RoutingService) {
   }
 }
