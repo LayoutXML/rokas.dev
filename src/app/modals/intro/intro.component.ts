@@ -8,6 +8,6 @@ import {RoutingService} from '../../services/routing.service';
 })
 export class IntroComponent {
 
-  constructor(private routingService: RoutingService) {
+  constructor(public routingService: RoutingService) {
   }
 }
