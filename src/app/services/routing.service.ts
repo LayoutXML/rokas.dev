@@ -21,10 +21,12 @@ export class RoutingService {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         setTimeout(() => {
-          // on next tick
+          // at least on next tick
+          // 1s delay is a reasonable time for page to render (internet speed has no effect)
+          // having tested lifecycle and event listeners for page to load, they all fire too early
           this.activeUrl.next(event.url);
           this.doScroll();
-        });
+        }, 1000);
       }
     });
   }
