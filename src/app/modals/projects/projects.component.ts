@@ -1,5 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons';
+import {ProjectsService} from '../../data/projects.service';
 
 @Component({
   selector: 'app-projects',
@@ -9,10 +10,10 @@ import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons';
 export class ProjectsComponent implements OnInit {
   upIcon = faChevronUp;
   downIcon = faChevronDown;
-  screenWidth = 1080;
+  screenWidth = 640;
   isExpanded = false;
 
-  constructor() {
+  constructor(public projectsService: ProjectsService) {
   }
 
   ngOnInit(): void {
@@ -22,5 +23,17 @@ export class ProjectsComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.screenWidth = window.innerWidth;
+  }
+
+  isProjectDisplayed(index: number) {
+    if (this.isExpanded || index < 3) {
+      return true;
+    }
+
+    if (index === 3) {
+      return (this.screenWidth >= 992);
+    }
+
+    return false;
   }
 }
