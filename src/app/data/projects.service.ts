@@ -2,24 +2,41 @@ import {Injectable} from '@angular/core';
 import {Project} from '../objects/project';
 import {Publication} from '../objects/publication';
 
-// Class simulates data which would otherwise be retrieved from the backend
-// It is not representative of my code, as it is written for quick and efficient usage of data available on the frontend
-// Data is stored on the frontend as there is no backend - whole website is made to be hosted on GitHub Pages
+// Simulation of a simplified backend server
+// Rationale: Data is stored on the frontend as there is no backend. Website is made to be hosted on GitHub Pages which only supports frontend hosting
+// Note: I am not using any maps here because typescript does not support maps with objects and for a small dataset like this, a simple search method (getProjectByCodename) is sufficient
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectsService {
-  projects: Project[] = [];
+  private projects: Project[] = [
+    this.getAppListManager(),
+    this.getTwelveish(),
+    this.getSabs(),
+    this.getTickTock(),
+    this.getListLauncher()
+  ];
 
   constructor() {
-    // AppListManager
+  }
+
+  public getAllProjects(): Project[] {
+    return this.projects;
+  }
+
+  public getProjectByCodename(codename: string): Project {
+    return this.projects.filter(project => project.codename === codename)[0];
+  }
+
+  private getAppListManager(): Project {
     const appListManager = new Project();
     appListManager.title = 'AppListManager';
     appListManager.codename = appListManager.title.toLowerCase();
     appListManager.summary = 'AppListManager is an easy to use Android library, which minimizes developing time when working on application or activity lists.';
-    this.projects.push(appListManager);
+    return appListManager;
+  }
 
-    // Twelveish
+  private getTwelveish(): Project {
     const androidAuthority = new Publication();
     androidAuthority.title = 'Android Authority';
     androidAuthority.codename = 'android_authority';
@@ -29,9 +46,10 @@ export class ProjectsService {
     twelveish.codename = twelveish.title.toLowerCase();
     twelveish.summary = 'Twelveish is a unique Wear OS (Android Wear) Watch Face that displays the approximate time in words (in multiple languages).';
     twelveish.publications = [androidAuthority];
-    this.projects.push(twelveish);
+    return twelveish;
+  }
 
-    // SABS
+  private getSabs(): Project {
     const lifehacker = new Publication();
     lifehacker.title = 'Lifehacker';
     lifehacker.codename = lifehacker.title.toLowerCase();
@@ -49,20 +67,22 @@ export class ProjectsService {
     sabs.codename = sabs.title.toLowerCase();
     sabs.summary = 'SABS was a system-wide rootless adblocker, package disabler and a permission manager with more than 100,000 downloads.';
     sabs.publications = [lifehacker, xda, gizmodo];
-    this.projects.push(sabs);
+    return sabs;
+  }
 
-    // TickTock Wear
+  private getTickTock(): Project {
     const ticktock = new Project();
     ticktock.title = 'TickTock Wear';
     ticktock.codename = 'ticktock';
     ticktock.summary = 'TickTock Wear adds a ticking sound to your Wear OS smart watch.';
-    this.projects.push(ticktock);
+    return ticktock;
+  }
 
-    // List-Launcher
+  private getListLauncher(): Project {
     const listlauncher = new Project();
     listlauncher.title = 'List-Launcher';
     listlauncher.codename = 'listlauncher';
     listlauncher.summary = 'List-Launcher is an amoled Android launcher that displays applications in a list. Currently in alpha stage.';
-    this.projects.push(listlauncher);
+    return listlauncher;
   }
 }

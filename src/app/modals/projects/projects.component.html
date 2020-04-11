@@ -3,7 +3,7 @@
   <h2>Personal Projects</h2>
 
   <div class="card-deck d-flex flex-wrap mt-3">
-    <ng-container *ngFor="let project of projectsService.projects; let i = index">
+    <ng-container *ngFor="let project of projectsService.getAllProjects(); let i = index">
       <div class="card card-background" [class.mb-4]="isProjectDisplayed(i)" *ngIf="isProjectDisplayed(i)">
         <a routerLink="/projects/{{project.codename}}" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/{{project.codename}}.png" alt="Rokas Jankunas | {{project.title}}"></a>
         <div class="card-body d-flex flex-column rounded">
