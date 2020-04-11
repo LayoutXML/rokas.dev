@@ -12,6 +12,7 @@ import {FooterComponent} from './modals/footer/footer.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {AppRoutingModule} from './app-routing.module';
 import {MainComponent} from './pages/main/main.component';
+import {NotFoundComponent} from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MainComponent} from './pages/main/main.component';
     ContactComponent,
     NavbarComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

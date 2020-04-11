@@ -1,5 +1,6 @@
 import {Component, HostListener} from '@angular/core';
 import {RoutingService} from './services/routing.service';
+import {MainComponent} from './pages/main/main.component';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,10 @@ export class AppComponent {
   constructor(private routingService: RoutingService) {
   }
 
+  onComponentChange(event) {
+    this.routingService.isHomePage = event instanceof MainComponent;
+  }
+
   @HostListener('window:scroll', ['$event'])
   onElementScroll(event) {
     clearTimeout(this.scrollTimer);
@@ -22,6 +27,9 @@ export class AppComponent {
   }
 
   handleScroll() {
+    if (!this.routingService.isHomePage) {
+      return;
+    }
     this.scrollTimer = null;
     const scrollPosition = document.documentElement.scrollTop;
     const screenHeight = window.innerHeight;

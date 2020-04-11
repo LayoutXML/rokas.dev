@@ -8,6 +8,7 @@ import {NavigationStart, Router} from '@angular/router';
 export class RoutingService {
   static extraHeight = 64;
   isFirstEvent = true;
+  isHomePage = true;
 
   activeUrl: BehaviorSubject<string> = new BehaviorSubject<string>(null);
   newUrl: BehaviorSubject<string> = new BehaviorSubject<string>(null);
@@ -19,8 +20,11 @@ export class RoutingService {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        this.activeUrl.next(event.url);
-        this.doScroll();
+        setTimeout(() => {
+          // on next tick
+          this.activeUrl.next(event.url);
+          this.doScroll();
+        });
       }
     });
   }
@@ -31,10 +35,16 @@ export class RoutingService {
       this.activeUrl.next(url);
       window.history.replaceState(null, null, url);
       this.doScroll();
+      if (!this.isHomePage) {
+        this.router.navigateByUrl(url);
+      }
     }
   }
 
   private doScroll() {
+    if (!this.isHomePage) {
+      return;
+    }
     switch (this.activeUrl.getValue()) {
       case '/projects':
         setTimeout(() => {

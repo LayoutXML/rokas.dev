@@ -1,6 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons';
-import {RoutingService} from '../../services/routing.service';
 
 @Component({
   selector: 'app-projects',
@@ -13,7 +12,7 @@ export class ProjectsComponent implements OnInit {
   screenWidth = 1080;
   isExpanded = false;
 
-  constructor(private routingService: RoutingService) {
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -24,5 +23,4 @@ export class ProjectsComponent implements OnInit {
   onResize(event) {
     this.screenWidth = window.innerWidth;
   }
-
 }
