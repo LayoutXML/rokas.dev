@@ -2,13 +2,9 @@
   max-width: 180px;
 }
 
-html, body {
+app-root {
   width: 100%;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-}
-
-main {
-  flex-grow: 1;
 }
