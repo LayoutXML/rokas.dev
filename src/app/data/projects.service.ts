@@ -25,7 +25,8 @@ export class ProjectsService {
   }
 
   public getProjectByCodename(codename: string): Project {
-    return this.projects.filter(project => project.codename === codename)[0];
+    const projectsByName = this.projects.filter(project => project.codename === codename);
+    return projectsByName.length > 0 ? projectsByName[0] : null;
   }
 
   private getAppListManager(): Project {

@@ -13,6 +13,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {AppRoutingModule} from './app-routing.module';
 import {MainComponent} from './pages/main/main.component';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
+import {ProjectViewComponent} from './pages/project/project-view.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {NotFoundComponent} from './pages/not-found/not-found.component';
     NavbarComponent,
     FooterComponent,
     MainComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProjectViewComponent
   ],
   imports: [
     BrowserModule,
