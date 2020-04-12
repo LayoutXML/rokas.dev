@@ -3,8 +3,8 @@
   <h2>Personal Projects</h2>
 
   <div class="card-deck d-flex flex-wrap mt-3">
-    <ng-container *ngFor="let project of projectsService.getAllProjects(); let i = index">
-      <div class="card card-background" [class.mb-4]="isProjectDisplayed(i)" *ngIf="isProjectDisplayed(i)">
+    <ng-container *ngFor="let project of getSubsetData()">
+      <div class="card card-background mb-4">
         <a routerLink="/projects/{{project.codename}}" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/{{project.codename}}.png" alt="Rokas Jankunas | {{project.title}}"></a>
         <div class="card-body d-flex flex-column rounded">
           <h5 class="card-title">{{project.title}}</h5>
@@ -23,7 +23,10 @@
     </ng-container>
   </div>
 
-  <div class="btn btn-link" role="button" (click)="this.isExpanded = !this.isExpanded">{{isExpanded ? 'Show less' : 'Show more'}}
-    <fa-icon [icon]="isExpanded ? upIcon : downIcon" class="ml-1 pt-1"></fa-icon>
+  <div class="btn btn-link" role="button" (click)="scrollLeft()">
+    <fa-icon [icon]="leftIcon" class="ml-1 pt-1"></fa-icon>
+  </div>
+  <div class="btn btn-link" role="button" (click)="scrollRight()">
+    <fa-icon [icon]="rightIcon" class="ml-1 pt-1"></fa-icon>
   </div>
 </div>
