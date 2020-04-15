@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ProjectsService} from '../../data/projects.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Project} from '../../objects/project';
+import {UrlType} from '../../objects/url-type.enum';
+import {faGithub, faGooglePlay, faInternetExplorer} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-project',
@@ -23,6 +25,28 @@ export class ProjectViewComponent implements OnInit {
         this.router.navigateByUrl('404');
       }
     });
+  }
+
+  getIconByUrlType(type: UrlType) {
+    switch (type) {
+      case UrlType.GITHUB:
+        return faGithub;
+      case UrlType.GOOGLE_PLAY:
+        return faGooglePlay;
+      default:
+        return faInternetExplorer;
+    }
+  }
+
+  getNameByUrlType(type: UrlType) {
+    switch (type) {
+      case UrlType.GITHUB:
+        return 'Source Code (GitHub)';
+      case UrlType.GOOGLE_PLAY:
+        return 'Google Play';
+      default:
+        return 'Website';
+    }
   }
 
 }

@@ -1,17 +1,57 @@
 <div class="container mt-4">
   <h1 class="mb-3">{{data.title}}</h1>
 
-  <div class="row mt-3">
-<!--    <div class="col-12 col-md-8 mb-3">-->
-    <div class="col-12">
+  <div class="row mt-3 mb-3">
 
+    <div class="col-12 col-md-8 mb-3">
       <div class="card">
         <h5 class="card-header">Description</h5>
-        <div class="card-body p-4">
-          {{data.summary}}
+        <div class="card-body p-4" [innerHTML]="data.description">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <div class="card mb-3" *ngIf="data.links.length > 0">
+        <h5 class="card-header">Links</h5>
+        <div class="card-body">
+          <ng-container *ngFor="let link of data.links">
+            <p>
+              <a href="{{link.url}}">
+                <fa-icon [icon]="getIconByUrlType(link.type)" class="mr-2"></fa-icon>
+                {{getNameByUrlType(link.type)}}
+              </a>
+            </p>
+          </ng-container>
+
+          <ng-container *ngIf="data.googlePlayBannerUrl">
+            <a href='{{data.googlePlayBannerUrl}}'>
+              <img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' class="mw-100">
+            </a>
+            <p class="play-store-legal">Google Play and the Google Play logo are trademarks of Google LLC.</p>
+          </ng-container>
         </div>
       </div>
 
+      <div class="card mb-3" *ngIf="data.publications.length > 0">
+        <h5 class="card-header">Featured in</h5>
+        <div class="card-body">
+          <div class="container mb-3">
+            <div class="row">
+              <div *ngFor="let publication of data.publications" class="col text-center align-items-end d-flex flex-wrap justify-content-center">
+                <a href="{{publication.url}}">
+                  <img src="/assets/badges/{{publication.codename}}.png" alt="{{publication.title}}" class="featured-badge mb-3">
+                </a>
+              </div>
+            </div>
+          </div>
+          <p *ngFor="let publication of data.publications" class="card-text font-weight-bold">
+            <a href="{{publication.url}}">{{publication.title + ': "' + publication.articleName + '"'}}</a>
+            <span *ngIf="publication.archiveUrl"> (<a href="{{publication.archiveUrl}}">Archive</a>)</span>
+          </p>
+        </div>
+
     </div>
+
   </div>
 </div>
