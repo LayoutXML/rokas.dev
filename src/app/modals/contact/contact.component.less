@@ -7,8 +7,16 @@ a {
 }
 
 .contact-wrapper {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("~src/assets/background_mountains_low.jpg") fixed center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("~src/assets/background_mountains_low.jpg");
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("~src/assets/background_mountains_low.jpg");
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("~src/assets/background_mountains_low.jpg");
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("~src/assets/background_mountains_low.jpg");
+  background-attachment: fixed;
+  background-position: center;
   background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
   color: #ffffff;
 }
 

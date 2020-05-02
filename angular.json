@@ -45,7 +45,8 @@
             "assets": [
               "src/favicon.png",
               "src/assets",
-              "src/CNAME"
+              "src/CNAME",
+              "src/sitemap.xml"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
