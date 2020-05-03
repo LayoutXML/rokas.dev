@@ -20,6 +20,7 @@ export class RoutingService {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
+        window.scrollTo(0, 0);
         setTimeout(() => {
           // at least on next tick
           // 1s delay is a reasonable time for page to render (internet speed has no effect)
