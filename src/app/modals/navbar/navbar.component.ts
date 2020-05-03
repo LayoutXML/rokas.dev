@@ -12,4 +12,9 @@ export class NavbarComponent {
 
   constructor(public routingService: RoutingService) {
   }
+
+  routeTo(url: string) {
+    this.isMenuCollapsed = true;
+    this.routingService.routeTo(url);
+  }
 }
