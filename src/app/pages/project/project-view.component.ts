@@ -3,7 +3,7 @@ import {ProjectsService} from '../../data/projects.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Project} from '../../objects/project';
 import {UrlType} from '../../objects/url-type.enum';
-import {faGithub, faGooglePlay, faInternetExplorer} from '@fortawesome/free-brands-svg-icons';
+import {faDocker, faGithub, faGooglePlay, faInternetExplorer} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-project',
@@ -33,6 +33,8 @@ export class ProjectViewComponent implements OnInit {
         return faGithub;
       case UrlType.GOOGLE_PLAY:
         return faGooglePlay;
+      case UrlType.DOCKER_HUB:
+        return faDocker;
       default:
         return faInternetExplorer;
     }
@@ -44,8 +46,10 @@ export class ProjectViewComponent implements OnInit {
         return 'Source Code (GitHub)';
       case UrlType.GOOGLE_PLAY:
         return 'Google Play';
+      case UrlType.DOCKER_HUB:
+        return 'Docker Hub';
       default:
-        return 'Website';
+        return 'External Website';
     }
   }
 

@@ -15,8 +15,9 @@ export class ProjectsService {
     this.getAppListManager(),
     this.getTwelveish(),
     this.getSabs(),
-    this.getTickTock(),
-    this.getListLauncher()
+    this.getVanillaMinecraftDocker(),
+    this.getPaperMcDocker(),
+    this.getTickTock()
   ];
 
   constructor() {
@@ -213,17 +214,39 @@ export class ProjectsService {
     return ticktock;
   }
 
-  private getListLauncher(): Project {
+  private getVanillaMinecraftDocker(): Project {
     const github = new Link();
     github.type = UrlType.GITHUB;
-    github.url = 'https://github.com/LayoutXML/List-Launcher';
+    github.url = 'https://github.com/LayoutXML/vanilla-minecraft-docker';
 
-    const listlauncher = new Project();
-    listlauncher.title = 'List-Launcher';
-    listlauncher.codename = 'listlauncher';
-    listlauncher.summary = 'List-Launcher is an amoled Android launcher that displays applications in a list.';
-    listlauncher.description = 'List-Launcher is a basic amoled black launcher that displays applications in a list. It primarily acts as a \'proof of concept\' of my AppListManager library and displays the activity list which changes in real time.';
-    listlauncher.links = [github];
-    return listlauncher;
+    const dockerHub = new Link();
+    dockerHub.type = UrlType.DOCKER_HUB;
+    dockerHub.url = 'https://hub.docker.com/r/layoutxml/vanilla-minecraft-docker';
+
+    const vanillaMinecraftDocker = new Project();
+    vanillaMinecraftDocker.title = 'vanilla-minecraft-docker';
+    vanillaMinecraftDocker.codename = 'vanilla-minecraft-docker';
+    vanillaMinecraftDocker.summary = 'A hassle free docker image that allows running a vanilla Minecraft server in no time.';
+    vanillaMinecraftDocker.description = 'A hassle free docker image that allows running a vanilla Minecraft server in no time. For Linux.';
+    vanillaMinecraftDocker.links = [github, dockerHub];
+    return vanillaMinecraftDocker;
+  }
+
+  private getPaperMcDocker(): Project {
+    const github = new Link();
+    github.type = UrlType.GITHUB;
+    github.url = 'https://github.com/LayoutXML/papermc-docker';
+
+    const dockerHub = new Link();
+    dockerHub.type = UrlType.DOCKER_HUB;
+    dockerHub.url = 'https://hub.docker.com/r/layoutxml/papermc-docker';
+
+    const papermcDocker = new Project();
+    papermcDocker.title = 'papermc-docker';
+    papermcDocker.codename = 'papermc-docker';
+    papermcDocker.summary = 'A hassle free docker image that allows running a PaperMc Minecraft server in no time.';
+    papermcDocker.description = 'A hassle free docker image that allows running a PaperMc Minecraft server in no time. For Linux.';
+    papermcDocker.links = [github, dockerHub];
+    return papermcDocker;
   }
 }
