@@ -44,7 +44,7 @@ export class ProjectsService {
     const appListManager = new Project();
     appListManager.title = 'AppListManager';
     appListManager.codename = appListManager.title.toLowerCase();
-    appListManager.summary = 'AppListManager is an easy to use Android library, which minimizes developing time when working on application or activity lists.';
+    appListManager.summary = 'AppListManager is an easy to use Android library, which minimizes developing time when working with application or activity lists.';
     appListManager.description = '<p>\n' +
       '              <a href="https://android-arsenal.com/details/1/7143"><img src="https://img.shields.io/badge/Android%20Arsenal-AppListManager-green.svg?style=flat" alt="Android Arsenal" /></a>\n' +
       '              <a href="https://travis-ci.org/LayoutXML/AppListManager"><img src="https://travis-ci.org/LayoutXML/AppListManager.svg?branch=master" alt="Build Status" /></a>\n' +
@@ -108,7 +108,7 @@ export class ProjectsService {
     const twelveish = new Project();
     twelveish.title = 'Twelveish';
     twelveish.codename = twelveish.title.toLowerCase();
-    twelveish.summary = 'Twelveish is a unique Wear OS (Android Wear) Watch Face that displays the approximate time in words (in multiple languages). More than 20,000 downloads on the Google Play store.';
+    twelveish.summary = 'Twelveish is a unique Wear OS (Android Wear) Watch Face that displays the approximate time in words in many languages. More than 30,000 downloads on the Google Play store.';
     twelveish.description = '<p>\n' +
       '              Lightweight but feature packed Wear OS Watch Face that displays time in words.\n' +
       '            </p>\n' +
@@ -177,7 +177,7 @@ export class ProjectsService {
     const sabs = new Project();
     sabs.title = 'SABS';
     sabs.codename = sabs.title.toLowerCase();
-    sabs.summary = 'SABS was a system-wide rootless adblocker, package disabler and a permission manager with more than 100,000 downloads.';
+    sabs.summary = 'SABS was a minimalistic system-wide rootless adblocker, package disabler and permission manager with more than 100,000 downloads.';
     sabs.description = 'SABS was a system-wide, rootless AdBlocker, package disabler, permission manager and more. It worked by using Samsung\'s KNOX SDK, therefore only worked on Samsung devices. What made SABS stand out from other adblockers is that it could make reversable system level changes because of the Samsung\'s KNOX tools, and didn\'t run in the background. With it, you could easily block url domains, disable system apps that you can\'t in settings, remove permissions from apps that you can\'t usually control.<br><br>' +
       'During a few months of its existence, SABS had been downloaded more than 100,000 times from GitHub repository alone (this number does not include downloads from other sources).';
     sabs.publications = [lifehacker, xda, gizmodo];
@@ -196,7 +196,7 @@ export class ProjectsService {
     const ticktock = new Project();
     ticktock.title = 'TickTock Wear';
     ticktock.codename = 'ticktock';
-    ticktock.summary = 'TickTock Wear adds a ticking sound to your Wear OS smart watch.';
+    ticktock.summary = 'TickTock Wear adds a ticking sound to your Wear OS (Android Wear) smart watch.';
     ticktock.description = '<p>\n' +
       '              TickTock Wear is a Wear OS (Android Wear) application that adds a ticking sound to your smart watch.\n' +
       '            </p>\n' +
