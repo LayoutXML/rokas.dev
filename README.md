@@ -1,1 +1,3 @@
-Site is under development. Visit [rokas.dev](https://rokas.dev) for the working version.
+# rokasjankunas.com and rokas.dev
+
+My personal website made with Angular and Bootstrap. Hosted on GitHub Pages
