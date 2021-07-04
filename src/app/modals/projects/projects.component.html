@@ -7,7 +7,8 @@
       <div class="card card-background" [class.mb-4]="isProjectDisplayed(i)" *ngIf="isProjectDisplayed(i)">
         <a routerLink="/projects/{{project.codename}}" class="text-center"><img class="card-img-top mt-3 mb-3" src="assets/projects/logos/{{project.codename}}.png" alt="Rokas Jankunas | {{project.title}}"></a>
         <div class="card-body d-flex flex-column">
-          <h5 class="card-title">{{project.title}}</h5>
+          <h5 class="card-title mb-1">{{project.title}}</h5>
+          <p class="font-italic">{{project.type}}</p>
           <p class="card-text" [class.mb-4]="project.publications.length > 0" [class.mb-5]="project.publications.length === 0">{{project.summary}}</p>
           <div class="mt-auto">
             <p class="card-text mb-2 font-weight-bold" *ngIf="project.publications.length > 0">As featured in:</p>

@@ -6,7 +6,6 @@ import {UrlType} from '../objects/url-type.enum';
 
 // Simulation of a simplified backend server
 // Rationale: Data is stored on the frontend as there is no backend. Website is made to be hosted on GitHub Pages which only supports frontend hosting
-// Note: I am not using any maps here because typescript does not support maps with objects and for a small dataset like this, a simple search method (getProjectByCodename) is sufficient
 @Injectable({
   providedIn: 'root'
 })
@@ -17,8 +16,11 @@ export class ProjectsService {
     this.getSabs(),
     this.getVanillaMinecraftDocker(),
     this.getPaperMcDocker(),
-    this.getTickTock()
-  ];
+    this.getTickTock(),
+    this.getWebsite(),
+    this.getDontStopMoving(),
+    this.getRentalStore()
+];
 
   constructor() {
   }
@@ -43,6 +45,7 @@ export class ProjectsService {
 
     const appListManager = new Project();
     appListManager.title = 'AppListManager';
+    appListManager.type = 'Java, Android (app)';
     appListManager.codename = appListManager.title.toLowerCase();
     appListManager.summary = 'AppListManager is an easy to use Android library, which minimizes developing time when working with application or activity lists.';
     appListManager.description = '<p>\n' +
@@ -107,8 +110,9 @@ export class ProjectsService {
 
     const twelveish = new Project();
     twelveish.title = 'Twelveish';
+    twelveish.type = 'Java, Wear OS/Android Wear (app, watch face)';
     twelveish.codename = twelveish.title.toLowerCase();
-    twelveish.summary = 'Twelveish is a unique Wear OS (Android Wear) Watch Face that displays the approximate time in words in many languages. More than 30,000 downloads on the Google Play store.';
+    twelveish.summary = 'Unique watch face that displays the approximate time in words in many languages. More than 30,000 downloads on the Google Play store.';
     twelveish.description = '<p>\n' +
       '              Lightweight but feature packed Wear OS Watch Face that displays time in words.\n' +
       '            </p>\n' +
@@ -176,8 +180,9 @@ export class ProjectsService {
 
     const sabs = new Project();
     sabs.title = 'SABS';
+    sabs.type = 'Java, Android (app)';
     sabs.codename = sabs.title.toLowerCase();
-    sabs.summary = 'SABS was a minimalistic system-wide rootless adblocker, package disabler and permission manager with more than 100,000 downloads.';
+    sabs.summary = 'Aesthetically pleasing system-wide rootless adblocker, package disabler, and permission manager with more than 100,000 downloads.';
     sabs.description = 'SABS was a system-wide, rootless AdBlocker, package disabler, permission manager and more. It worked by using Samsung\'s KNOX SDK, therefore only worked on Samsung devices. What made SABS stand out from other adblockers is that it could make reversable system level changes because of the Samsung\'s KNOX tools, and didn\'t run in the background. With it, you could easily block url domains, disable system apps that you can\'t in settings, remove permissions from apps that you can\'t usually control.<br><br>' +
       'During a few months of its existence, SABS had been downloaded more than 100,000 times from GitHub repository alone (this number does not include downloads from other sources).';
     sabs.publications = [lifehacker, xda, gizmodo];
@@ -195,8 +200,9 @@ export class ProjectsService {
 
     const ticktock = new Project();
     ticktock.title = 'TickTock Wear';
+    ticktock.type = 'Java, Wear OS/Android Wear (app)';
     ticktock.codename = 'ticktock';
-    ticktock.summary = 'TickTock Wear adds a ticking sound to your Wear OS (Android Wear) smart watch.';
+    ticktock.summary = 'TickTock Wear adds a ticking sound to your smart watch.';
     ticktock.description = '<p>\n' +
       '              TickTock Wear is a Wear OS (Android Wear) application that adds a ticking sound to your smart watch.\n' +
       '            </p>\n' +
@@ -225,6 +231,7 @@ export class ProjectsService {
 
     const vanillaMinecraftDocker = new Project();
     vanillaMinecraftDocker.title = 'vanilla-minecraft-docker';
+    vanillaMinecraftDocker.type = 'Docker, Bash';
     vanillaMinecraftDocker.codename = 'vanilla-minecraft-docker';
     vanillaMinecraftDocker.summary = 'A hassle free docker image that allows running a vanilla Minecraft server in no time.';
     vanillaMinecraftDocker.description = 'A hassle free docker image that allows running a vanilla Minecraft server in no time. For Linux.';
@@ -243,10 +250,173 @@ export class ProjectsService {
 
     const papermcDocker = new Project();
     papermcDocker.title = 'papermc-docker';
+    papermcDocker.type = 'Docker, Bash';
     papermcDocker.codename = 'papermc-docker';
     papermcDocker.summary = 'A hassle free docker image that allows running a PaperMc Minecraft server in no time.';
     papermcDocker.description = 'A hassle free docker image that allows running a PaperMc Minecraft server in no time. For Linux.';
     papermcDocker.links = [github, dockerHub];
     return papermcDocker;
+  }
+
+  private getWebsite(): Project {
+    const github = new Link();
+    github.type = UrlType.GITHUB;
+    github.url = 'https://github.com/LayoutXML/rokas.dev';
+
+    const url1 = new Link();
+    url1.type = UrlType.OTHER;
+    url1.url = 'https://rokas.dev';
+
+    const url2 = new Link();
+    url2.type = UrlType.OTHER;
+    url2.url = 'https://rokasjankunas.com';
+
+    const website = new Project();
+    website.title = 'This website';
+    website.type = 'Angular 2+, Bootstrap (website)';
+    website.codename = 'website';
+    website.summary = 'My personal website made with Angular and Bootstrap. Hosted on GitHub Pages. Custom one-page with dynamic URLs solution.';
+    website.description = 'My personal website made with Angular and Bootstrap. Hosted on GitHub Pages. Custom one-page with dynamic URLs solution.';
+    website.links = [github, url1, url2];
+    return website;
+  }
+
+  private getDontStopMoving(): Project {
+    const github = new Link();
+    github.type = UrlType.GITHUB;
+    github.url = 'https://github.com/LayoutXML/Dont-Stop-Moving.-The-Game';
+
+    const dontStopMoving = new Project();
+    dontStopMoving.title = 'Don\'t stop moving! The game';
+    dontStopMoving.type = 'Java, OpenGL (Windows game)';
+    dontStopMoving.codename = 'dont-stop-moving';
+    dontStopMoving.summary = 'The village has been turned to ice by an evil witch who has also set up traps along the track to catch her. Avoid the obstacles and reach the end of the level in order to rescue people of the frozen land.';
+    dontStopMoving.description = '<p>The village has been turned to ice by an evil witch who has also set up traps along the track to catch her. Avoid the obstacles and reach the end of the level in order to rescue people of the frozen land.\n</p>' +
+      '\n' +
+      '<h5>Controls\n</h5>' +
+      '<p>Can be changed in InputManager.java file. Flying (for debug purposes) can also be enabled in the same file.\n</p>' +
+      '<ul>\n' +
+      '<li>Looking around - Mouse movement\n</li>' +
+      '<li>Move forward - W\n</li>' +
+      '<li>Move backwards - S\n</li>' +
+      '<li>Move left - A\n</li>' +
+      '<li>Move right - D\n</li>' +
+      '<li>Jump - Space\n</li>' +
+      '<li>Restart/respawn - R\n</li>' +
+      '<li>Exit - Escape\n</li>' +
+      '</ul>If flying is enabled:\n</li>' +
+      '<ul>\n</li>' +
+      '<li>Move up - Q\n</li>' +
+      '<li>Move down - Z</li>' +
+      '</ul>';
+    dontStopMoving.links = [github];
+    return dontStopMoving;
+  }
+
+  private getRentalStore(): Project {
+    const github = new Link();
+    github.type = UrlType.GITHUB;
+    github.url = 'https://github.com/LayoutXML/Rental-Store-Mock-API';
+
+    const rentalStore = new Project();
+    rentalStore.title = 'Rental Store Mock API';
+    rentalStore.type = 'Java, Spring Boot';
+    rentalStore.codename = 'rental-store';
+    rentalStore.summary = 'REST API made with Spring Boot (web, JPA, validation, cache, security), H2 database, Flyway migration, Docker, JUnit and Mockito tests, Lombok. Built on Java 11.';
+    rentalStore.description = '<p>REST API made with Spring Boot (web, JPA, validation, cache, security), H2 database, Flyway migration, Docker, JUnit and Mockito tests, Lombok. Built on Java 11.</p>\n' +
+      '<h5 id="use-cases">Use cases</h5>\n' +
+      '<ul>\n' +
+      '<li>API users can get a list of available equipment.</li>\n' +
+      '<li>API users can choose a single product and get its details and pricing options.</li>\n' +
+      '<li>API users can delete a product.</li>\n' +
+      '<li>API users can calculate the total price for the chosen product, commitment and rental period.</li>\n' +
+      '</ul>\n' +
+      '<p>Each use case corresponds to an endpoint. Technical details and specifications of each can be found in the Documentation.md file.</p>\n' +
+      '<h5 id="features">Features</h5>\n' +
+      '<ul>\n' +
+      '<li>REST API endpoints for each use case mentioned above.</li>\n' +
+      '<li>Spring Boot Validation for these endpoints.</li>\n' +
+      '<li>Error codes for invalid, unauthorized or incorrect data.</li>\n' +
+      '<li>Persistent H2 database.</li>\n' +
+      '<li>Flyway database migrations for setting up and filling database tables.</li>\n' +
+      '<li>Basic Spring Security with a single user.</li>\n' +
+      '<li>Basic Spring Caching for data retrieval and cache eviction upon product deletion.</li>\n' +
+      '<li>Docker script for running the generated JAR file.</li>\n' +
+      '<li>JUnit unit tests for price calculations mentioned below. Mockito for mocking the database for these tests.</li>\n' +
+      '</ul>\n' +
+      '<h5 id="sample-data">Sample data</h5>\n' +
+      '<table>\n' +
+      '<thead>\n' +
+      '<tr>\n' +
+      '<th style="text-align:right">Product</th>\n' +
+      '<th style="text-align:right">Price/month without commitment</th>\n' +
+      '<th style="text-align:right">Price/month for 3 month commitment</th>\n' +
+      '<th style="text-align:right">Price/month for 6 month commitment</th>\n' +
+      '<th style="text-align:right">Initial charge</th>\n' +
+      '<th>Available for rent</th>\n' +
+      '</tr>\n' +
+      '</thead>\n' +
+      '<tbody>\n' +
+      '<tr>\n' +
+      '<td style="text-align:right">Skis</td>\n' +
+      '<td style="text-align:right">$35</td>\n' +
+      '<td style="text-align:right">$30</td>\n' +
+      '<td style="text-align:right">$25</td>\n' +
+      '<td style="text-align:right">$35</td>\n' +
+      '<td>Yes</td>\n' +
+      '</tr>\n' +
+      '<tr>\n' +
+      '<td style="text-align:right">Snowboard</td>\n' +
+      '<td style="text-align:right">$25</td>\n' +
+      '<td style="text-align:right">$20</td>\n' +
+      '<td style="text-align:right">$17</td>\n' +
+      '<td style="text-align:right">$25</td>\n' +
+      '<td>Yes</td>\n' +
+      '</tr>\n' +
+      '<tr>\n' +
+      '<td style="text-align:right">Bike</td>\n' +
+      '<td style="text-align:right">$35</td>\n' +
+      '<td style="text-align:right">$30</td>\n' +
+      '<td style="text-align:right">$25</td>\n' +
+      '<td style="text-align:right">$35</td>\n' +
+      '<td>No</td>\n' +
+      '</tr>\n' +
+      '<tr>\n' +
+      '<td style="text-align:right">Roller-blades</td>\n' +
+      '<td style="text-align:right">$17</td>\n' +
+      '<td style="text-align:right">$13</td>\n' +
+      '<td style="text-align:right">$10</td>\n' +
+      '<td style="text-align:right">$17</td>\n' +
+      '<td>Yes</td>\n' +
+      '</tr>\n' +
+      '<tr>\n' +
+      '<td style="text-align:right">Skateboard</td>\n' +
+      '<td style="text-align:right">$35</td>\n' +
+      '<td style="text-align:right">$30</td>\n' +
+      '<td style="text-align:right">$25</td>\n' +
+      '<td style="text-align:right">$35</td>\n' +
+      '<td>Yes</td>\n' +
+      '</tr>\n' +
+      '</tbody>\n' +
+      '</table>\n' +
+      '<br><h5 id="pricing-formula">Pricing formula</h5>\n' +
+      '<p>Commitment is a number of months that the customer chooses to rent the equipment for. It can either be 3, 6 months or no commitment. Regardless of commitment, a customer can choose to return the product at a different time in which case they would pay no commitment price.</p>\n' +
+      '<p>Pricing formula is as follows:</p>\n' +
+      '<p><em>total price = initial charge + (return months </em> price per month, based on commitment)*</p>\n' +
+      '<p>For example:</p>\n' +
+      '<ul>\n' +
+      '<li>User chooses a skateboard with a commitment of 6 months and chooses to return it after 2 months: <ul>\n' +
+      '<li>price = $35 initial charge + (2 months * $35 no commitment price) = $105</li>\n' +
+      '</ul>\n' +
+      '</li>\n' +
+      '</ul>\n' +
+      '<ul>\n' +
+      '<li>User chooses roller-blades without a commitment and chooses to return it after 7 months:<ul>\n' +
+      '<li>price = $17 initial charge + (7 months * $17 no commitment price) = $136</li>\n' +
+      '</ul>\n' +
+      '</li>\n' +
+      '</ul>\n';
+    rentalStore.links = [github];
+    return rentalStore;
   }
 }

@@ -6,6 +6,7 @@ export class Project {
   codename: string; // used for project url and matches icon resource name
   summary: string;
   description: string; // description of the project, supports HTML tags
+  type: string;
   googlePlayBannerUrl: string;
   publications: Publication[] = [];
   links: Link[] = [];
