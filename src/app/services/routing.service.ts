@@ -12,6 +12,7 @@ export class RoutingService {
 
   activeUrl: BehaviorSubject<string> = new BehaviorSubject<string>(null);
   newUrl: BehaviorSubject<string> = new BehaviorSubject<string>(null);
+  loading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   static compareHeights(scrollPosition, elementTop, elementHeight) {
     return scrollPosition + RoutingService.extraHeight < elementTop + elementHeight && scrollPosition > elementTop;
@@ -20,6 +21,7 @@ export class RoutingService {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
+        this.loading.next(true);
         window.scrollTo(0, 0);
         setTimeout(() => {
           // at least on next tick
@@ -27,6 +29,7 @@ export class RoutingService {
           // having tested lifecycle and event listeners for page to load, they all fire too early
           this.activeUrl.next(event.url);
           this.doScroll();
+          this.loading.next(false);
         }, 1000);
       }
     });

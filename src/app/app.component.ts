@@ -1,17 +1,29 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {RoutingService} from './services/routing.service';
 import {MainComponent} from './pages/main/main.component';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   scrollTimer;
 
-  constructor(private routingService: RoutingService) {
+  constructor(private routingService: RoutingService,
+              private spinner: NgxSpinnerService) {
+  }
+
+  ngOnInit(): void {
+    this.routingService.loading.subscribe(value => {
+      if (value) {
+        this.spinner.show();
+      } else {
+        this.spinner.hide();
+      }
+    });
   }
 
   onComponentChange(event) {

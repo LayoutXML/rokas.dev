@@ -14,6 +14,8 @@ import {AppRoutingModule} from './app-routing.module';
 import {MainComponent} from './pages/main/main.component';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {ProjectViewComponent} from './pages/project/project-view.component';
+import {NgxSpinnerModule} from 'ngx-spinner';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {ProjectViewComponent} from './pages/project/project-view.component';
     BrowserModule,
     NgbModule,
     FontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
