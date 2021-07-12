@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {Urls} from 'src/app/objects/urls.enum';
 import {RoutingService} from '../../services/routing.service';
 
 @Component({
@@ -8,6 +9,8 @@ import {RoutingService} from '../../services/routing.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent {
+  Urls = Urls;
+
   isMenuCollapsed = true;
 
   constructor(public routingService: RoutingService) {

@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {NavigationStart, Router} from '@angular/router';
+import {Urls} from '../objects/urls.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,9 @@ export class RoutingService {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        this.loading.next(true);
+        if (event.url === Urls.PROJECTS || event.url === Urls.ABOUT || event.url === Urls.CONTACTS) {
+          this.loading.next(true);
+        }
         window.scrollTo(0, 0);
         setTimeout(() => {
           // at least on next tick
@@ -52,7 +55,7 @@ export class RoutingService {
       return;
     }
     switch (this.activeUrl.getValue()) {
-      case '/projects':
+      case Urls.PROJECTS:
         setTimeout(() => {
           const projectsElement = document.getElementById('projects');
           if (projectsElement) {
@@ -61,7 +64,7 @@ export class RoutingService {
           }
         }, this.isFirstEvent ? 1000 : 1);
         break;
-      case '/about':
+      case Urls.ABOUT:
         setTimeout(() => {
           const aboutElement = document.getElementById('about');
           if (aboutElement) {
@@ -70,7 +73,7 @@ export class RoutingService {
           }
         }, this.isFirstEvent ? 1000 : 1);
         break;
-      case '/contacts':
+      case Urls.CONTACTS:
         setTimeout(() => {
           const contactsElement = document.getElementById('contacts');
           if (contactsElement) {

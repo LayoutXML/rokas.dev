@@ -2,6 +2,7 @@ import {Component, HostListener, OnInit} from '@angular/core';
 import {RoutingService} from './services/routing.service';
 import {MainComponent} from './pages/main/main.component';
 import {NgxSpinnerService} from 'ngx-spinner';
+import {Urls} from './objects/urls.enum';
 
 @Component({
   selector: 'app-root',
@@ -52,16 +53,16 @@ export class AppComponent implements OnInit {
     const contactsElement = document.getElementById('contacts');
     if (scrollPosition === 0 || RoutingService.compareHeights(scrollPosition, 0, homeElement.offsetTop + homeElement.offsetHeight)) {
       window.history.replaceState(null, null, '');
-      this.routingService.activeUrl.next('/');
+      this.routingService.activeUrl.next(Urls.HOME);
     } else if (RoutingService.compareHeights(scrollPosition, projectsElement.offsetTop, projectsElement.offsetHeight)) {
       window.history.replaceState(null, null, 'projects');
-      this.routingService.activeUrl.next('/projects');
+      this.routingService.activeUrl.next(Urls.PROJECTS);
     } else if (scrollPosition + screenHeight < scrollHeight - RoutingService.extraHeight && RoutingService.compareHeights(scrollPosition, aboutElement.offsetTop, aboutElement.offsetHeight)) {
       window.history.replaceState(null, null, 'about');
-      this.routingService.activeUrl.next('/about');
+      this.routingService.activeUrl.next(Urls.ABOUT);
     } else if (scrollPosition + screenHeight >= scrollHeight - RoutingService.extraHeight || RoutingService.compareHeights(scrollPosition, contactsElement.offsetTop, contactsElement.offsetHeight)) {
       window.history.replaceState(null, null, 'contacts');
-      this.routingService.activeUrl.next('/contacts');
+      this.routingService.activeUrl.next(Urls.CONTACTS);
     }
   }
 }
