@@ -45,7 +45,7 @@ export class ProjectsService {
 
     const appListManager = new Project();
     appListManager.title = 'AppListManager';
-    appListManager.type = 'Java, Android (app)';
+    appListManager.type = 'Java, Android (library, app)';
     appListManager.codename = appListManager.title.toLowerCase();
     appListManager.summary = 'AppListManager is an easy to use Android library, which minimizes developing time when working with application or activity lists.';
     appListManager.description = '<p>\n' +
