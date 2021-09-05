@@ -15,11 +15,11 @@ export class ProjectsService {
     this.getTwelveish(),
     this.getSabs(),
     this.getVanillaMinecraftDocker(),
+    this.getRentalStore(),
+    this.getWebsite(),
     this.getPaperMcDocker(),
     this.getTickTock(),
-    this.getWebsite(),
-    this.getDontStopMoving(),
-    this.getRentalStore()
+    this.getDontStopMoving()
 ];
 
   constructor() {
