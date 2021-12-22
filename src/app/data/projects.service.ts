@@ -112,7 +112,7 @@ export class ProjectsService {
     twelveish.title = 'Twelveish';
     twelveish.type = 'Java, Wear OS/Android Wear (app, watch face)';
     twelveish.codename = twelveish.title.toLowerCase();
-    twelveish.summary = 'Unique watch face that displays the approximate time in words in many languages. More than 30,000 downloads on the Google Play store.';
+    twelveish.summary = 'Unique watch face that displays the approximate time in words in many languages. About 50,000 downloads on the Google Play store.';
     twelveish.description = '<p>\n' +
       '              Lightweight but feature packed Wear OS Watch Face that displays time in words.\n' +
       '            </p>\n' +
