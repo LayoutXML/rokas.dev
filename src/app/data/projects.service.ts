@@ -19,8 +19,9 @@ export class ProjectsService {
     this.getWebsite(),
     this.getPaperMcDocker(),
     this.getTickTock(),
-    this.getDontStopMoving()
-];
+    this.getDontStopMoving(),
+    this.getOther()
+  ];
 
   constructor() {
   }
@@ -418,5 +419,14 @@ export class ProjectsService {
       '</ul>\n';
     rentalStore.links = [github];
     return rentalStore;
+  }
+
+  private getOther(): Project {
+    const other = new Project();
+    other.title = 'Other projects';
+    other.codename = 'other';
+    other.summary = 'More projects using Java, C, C++, C#, Bash, Docker, SQL, JSON, HTML, CSS etc. at github.com/LayoutXML';
+    other.externalUrl = 'https://github.com/LayoutXML';
+    return other;
   }
 }

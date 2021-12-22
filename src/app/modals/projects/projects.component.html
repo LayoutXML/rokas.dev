@@ -19,7 +19,8 @@
                 </div>
               </div>
             </div>
-            <a routerLink="/projects/{{project.codename}}" class="btn btn-primary mt-auto mr-auto mb-0 stretched-link">Read more</a>
+            <a href="{{project.externalUrl}}" class="btn btn-primary mt-auto mr-auto mb-0 stretched-link" *ngIf="project.externalUrl">Read more</a>
+            <a routerLink="{{'/projects/' + project.codename}}" class="btn btn-primary mt-auto mr-auto mb-0 stretched-link" *ngIf="!project.externalUrl">Read more</a>
           </div>
         </div>
       </div>

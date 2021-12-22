@@ -8,6 +8,7 @@ export class Project {
   description: string; // description of the project, supports HTML tags
   type: string;
   googlePlayBannerUrl: string;
+  externalUrl: string;
   publications: Publication[] = [];
   links: Link[] = [];
 }
