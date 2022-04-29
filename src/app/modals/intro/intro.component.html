@@ -2,8 +2,12 @@
   <div class="jumbotron mb-0 pt-5">
     <div class="container">
       <h1 class="display-4" [class.animated-title]="!(routingService.loading | async)">Rokas Jankunas</h1>
-      <p class="lead">My name is Rokas Jankunas and I’m a senior software developer. My personal projects have been featured on Gizmodo, Lifehacker, Android Authority and XDA-Developers.</p>
-      <a class="btn btn-primary btn-lg btn-raised stretched-link" role="button" (click)="routingService.routeTo(Urls.ABOUT)">About me</a>
+      <p class="lead">Hello, my name is Rokas Jankunas and I'm a Senior Software Engineer. My personal projects have
+        been featured on major tech news websites such as Gizmodo, Lifehacker,
+        Android Authority, and XDA-Developers. In addition to that, I have an Oracle Certified Professional
+        certification.</p>
+      <a class="btn btn-primary btn-lg btn-raised stretched-link" role="button"
+         (click)="routingService.routeTo(Urls.ABOUT)">About me</a>
     </div>
   </div>
   <div class="m-0 p-0 corner-helper"></div>
