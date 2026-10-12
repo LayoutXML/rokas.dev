@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { project, variant = 'compact' } = Astro.props;
-const { title, type, summary, logo, publications, status, year, stat } = project.data;
+const { title, type, summary, logo, publications, status, year, stat, externalUrl } = project.data;
 const dialogId = `project-${project.id}`;
 ---
 
@@ -20,7 +20,17 @@ const dialogId = `project-${project.id}`;
   <div class="content">
     <div class="body">
       <h4 class="title">
-        <a class="stretched" href={`#${project.id}`} data-open-dialog={dialogId}>{title}</a>
+        {
+          externalUrl ? (
+            <a class="stretched" href={externalUrl} target="_blank" rel="noopener">
+              {title}
+            </a>
+          ) : (
+            <a class="stretched" href={`#${project.id}`} data-open-dialog={dialogId}>
+              {title}
+            </a>
+          )
+        }
       </h4>
       <p class="meta" hidden={!(status === 'retired' || year || stat)}>
         {status === 'retired' && <span class="status-label" title="No longer maintained">Retired</span>}
