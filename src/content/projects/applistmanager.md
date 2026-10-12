@@ -1,6 +1,7 @@
 ---
 title: AppListManager
-order: 1
+order: 3
+status: retired
 type: Java, Android (library, app)
 summary: AppListManager is an easy to use Android library, which minimizes developing time when working with application or activity lists.
 logo: ../../assets/logos/applistmanager.png
@@ -13,7 +14,6 @@ playBadgeUrl: https://play.google.com/store/apps/details?id=com.layoutxml.applis
 ---
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppListManager-green.svg?style=flat)](https://android-arsenal.com/details/1/7143)
-[![Build Status](https://travis-ci.org/LayoutXML/AppListManager.svg?branch=master)](https://travis-ci.org/LayoutXML/AppListManager)
 [![GitHub](https://img.shields.io/github/license/LayoutXML/AppListManager.svg)](https://github.com/LayoutXML/AppListManager/blob/master/LICENSE)
 [![Version](https://jitpack.io/v/LayoutXML/AppListManager.svg)](https://jitpack.io/#LayoutXML/AppListManager)
 ![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)

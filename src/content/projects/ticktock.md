@@ -1,6 +1,7 @@
 ---
 title: TickTock Wear
-order: 8
+order: 4
+status: retired
 type: Java, Wear OS/Android Wear (app)
 summary: TickTock Wear adds a ticking sound to your smart watch.
 logo: ../../assets/logos/ticktock.png

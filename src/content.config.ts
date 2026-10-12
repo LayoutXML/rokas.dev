@@ -8,7 +8,15 @@ const projects = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
+      // Position within its category group
       order: z.number(),
+      // Big card with press logos: needs press coverage, 10k+ users or a notable technical achievement
+      featured: z.boolean().default(false),
+      // retired = no longer maintained (or no longer available); shown as a "Retired" label
+      status: z.enum(['active', 'retired']),
+      year: z.string().optional(),
+      // Short headline number shown on the card, e.g. "100k+ downloads"
+      stat: z.string().optional(),
       type: z.string().optional(),
       summary: z.string(),
       logo: image(),

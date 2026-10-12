@@ -1,6 +1,9 @@
 ---
 title: SABS
-order: 3
+order: 1
+featured: true
+status: retired
+stat: 100k+ downloads
 type: Java, Android (app)
 summary: Aesthetically pleasing system-wide rootless adblocker, package disabler, and permission manager with more than 100,000 downloads.
 logo: ../../assets/logos/sabs.png

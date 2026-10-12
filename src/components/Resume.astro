@@ -1,39 +1,70 @@
 ---
-import { awards, education, experience, experienceSummary } from '../data/resume';
+import { awards, education, experience } from '../data/resume';
+import { site } from '../data/site';
+import Icon from './Icon.astro';
 import ResumeEntries from './ResumeEntries.astro';
+
+const groups = [
+  { title: 'Experience', entries: experience },
+  { title: 'Education', entries: education },
+  { title: 'Awards & Achievements', entries: awards },
+];
 ---
 
 <section id="about">
   <div class="container">
-    <h2 class="first">Experience</h2>
-    <p class="summary">{experienceSummary}</p>
-    <ResumeEntries entries={experience} />
-
-    <h2>Education</h2>
-    <ResumeEntries entries={education} />
-
-    <h2>Awards & Achievements</h2>
-    <ResumeEntries entries={awards} />
+    <h2 class="heading">About</h2>
+    {
+      groups.map((group) => (
+        <div class="group">
+          <h3 class="group-title">{group.title}</h3>
+          <ResumeEntries entries={group.entries} />
+        </div>
+      ))
+    }
+    <p class="more no-print">
+      <a class="btn-outline" href={site.linkedin}><Icon name="linkedin-in" /> Full history on LinkedIn</a>
+    </p>
   </div>
 </section>
 
 <style>
   section {
-    padding-bottom: 1rem;
+    padding-bottom: 3rem;
   }
 
-  h2 {
-    margin: 3rem 0 0.25rem;
+  .heading {
+    margin: 1.5rem 0 1.5rem;
     padding-bottom: 0.25rem;
     border-bottom: 2px solid #888;
   }
 
-  h2.first {
-    margin-top: 1.5rem;
+  .group {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .summary {
-    margin: 1rem 0 0;
-    font-weight: 300;
+  .group-title {
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #6c757d;
+  }
+
+  @media (min-width: 768px) {
+    .group {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 1.5rem;
+    }
+
+    .group-title {
+      margin: 0.25rem 0 0;
+    }
+  }
+
+  .more {
+    margin: 1.75rem 0 0;
   }
 </style>

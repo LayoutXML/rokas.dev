@@ -1,6 +1,7 @@
 ---
 title: papermc-docker
-order: 7
+order: 2
+status: active
 type: Docker, Bash
 summary: A hassle free docker image that allows running a PaperMc Minecraft server in no time.
 logo: ../../assets/logos/papermc-docker.png

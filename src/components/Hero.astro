@@ -1,5 +1,6 @@
 ---
 import { Image, getImage } from 'astro:assets';
+import Icon from './Icon.astro';
 import { site } from '../data/site';
 import background from '../assets/background_mountains.jpg';
 import profile from '../assets/profile.jpg';
@@ -17,6 +18,7 @@ const bg = await getImage({ src: background, width: 1920, format: 'webp', qualit
         <div class="text">
           <h1 class="title">{site.name}</h1>
           <p class="lead">{site.intro}</p>
+          <p class="location"><Icon name="map-marker-alt" /> {site.location}</p>
           <a class="btn btn-lg no-print" href="#about">About me</a>
         </div>
       </div>
@@ -54,6 +56,15 @@ const bg = await getImage({ src: background, width: 1920, format: 'webp', qualit
     font-size: 3.5rem;
     font-weight: 300;
     line-height: 1.2;
+  }
+
+  .location {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .location :global(.icon) {
+    margin-right: 0.25rem;
   }
 
   .lead {

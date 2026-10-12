@@ -1,6 +1,9 @@
 ---
 title: Twelveish
 order: 2
+featured: true
+status: retired
+stat: 50k+ downloads
 type: Java, Wear OS/Android Wear (app, watch face)
 summary: Unique watch face that displays the approximate time in words in many languages. About 50,000 downloads on the Google Play store.
 logo: ../../assets/logos/twelveish.png

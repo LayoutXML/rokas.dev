@@ -1,24 +1,36 @@
 ---
 import { getCollection } from 'astro:content';
 import Icon from './Icon.astro';
+import { site } from '../data/site';
 import ProjectCard from './ProjectCard.astro';
 import ProjectDialog from './ProjectDialog.astro';
 
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+
+const groups = [
+  { title: 'Featured', featured: true },
+  { title: 'More projects', featured: false },
+]
+  .map((group) => ({ ...group, projects: projects.filter((project) => project.data.featured === group.featured) }))
+  .filter((group) => group.projects.length > 0);
 ---
 
 <section id="projects">
   <div class="container">
-    <h2 class="heading">Personal Projects</h2>
+    <h2 class="heading">Projects</h2>
 
-    <div class="grid" id="project-grid" data-project-grid>
-      {projects.map((project) => <ProjectCard project={project} />)}
-    </div>
+    {
+      groups.map((group) => (
+        <h3 class="group-title">{group.title}</h3>
+        <div class:list={['grid', { featured: group.featured }]}>
+          {group.projects.map((project) => <ProjectCard project={project} variant={group.featured ? 'feature' : 'compact'} />)}
+        </div>
+      ))
+    }
 
-    <button class="btn btn-link toggle no-print" type="button" aria-controls="project-grid" aria-expanded="false" data-project-toggle>
-      <span class="when-collapsed">Show more <Icon name="chevron-down" /></span>
-      <span class="when-expanded">Show less <Icon name="chevron-up" /></span>
-    </button>
+    <p class="more no-print">
+      <a class="btn-outline" href={site.github}><Icon name="github" /> More projects on GitHub</a>
+    </p>
   </div>
 
   {projects.filter((project) => !project.data.externalUrl).map((project) => <ProjectDialog project={project} />)}
@@ -29,56 +41,28 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
     margin-top: 1rem;
   }
 
+  .group-title {
+    margin: 2rem 0 0;
+    font-size: 1.25rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem 30px;
+    gap: 1rem;
     margin-top: 1rem;
   }
 
-  /* Collapsed: first 3 projects (4 on wide screens, so the row stays full) */
-  .grid:not([data-expanded]) > :global(:nth-child(n + 4)) {
-    display: none;
-  }
-
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     .grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media (min-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media (min-width: 992px) {
-    .grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .grid:not([data-expanded]) > :global(:nth-child(4)) {
-      display: flex;
-    }
-  }
-
-  .toggle {
-    margin-top: 1.5rem;
-  }
-
-  .toggle :global(.icon) {
-    margin-left: 0.25rem;
-  }
-
-  .toggle[aria-expanded='true'] .when-collapsed,
-  .toggle[aria-expanded='false'] .when-expanded {
-    display: none;
-  }
-
-  @media print {
-    .grid > :global(*) {
-      display: flex !important;
-    }
+  .more {
+    margin: 2rem 0 0;
   }
 </style>

@@ -34,16 +34,6 @@ window.addEventListener('scroll', updateActiveLink, { passive: true });
 window.addEventListener('load', updateActiveLink);
 updateActiveLink();
 
-// "Show more / Show less" for the project grid
-const grid = document.querySelector<HTMLElement>('[data-project-grid]');
-const gridToggle = document.querySelector<HTMLButtonElement>('[data-project-toggle]');
-
-gridToggle?.addEventListener('click', () => {
-  const expanded = !grid?.hasAttribute('data-expanded');
-  grid?.toggleAttribute('data-expanded', expanded);
-  gridToggle.setAttribute('aria-expanded', String(expanded));
-});
-
 // Project popups, linked to the URL hash (/#<project-id>)
 function dialogForHash(): HTMLDialogElement | null {
   const slug = decodeURIComponent(location.hash.slice(1));

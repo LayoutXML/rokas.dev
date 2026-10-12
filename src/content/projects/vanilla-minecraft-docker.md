@@ -1,6 +1,7 @@
 ---
 title: vanilla-minecraft-docker
-order: 4
+order: 1
+status: active
 type: Docker, Bash
 summary: A hassle free docker image that allows running a vanilla Minecraft server in no time.
 logo: ../../assets/logos/vanilla-minecraft-docker.png

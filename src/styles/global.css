@@ -214,3 +214,22 @@ section[id] {
     padding-top: 0;
   }
 }
+
+/* Bold outlined link-button for secondary calls to action */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  background: #fff;
+  border: 2px solid var(--color-dark);
+  border-radius: 10rem;
+  transition: color 0.15s, background-color 0.15s;
+}
+.btn-outline:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: var(--color-dark);
+}

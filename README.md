@@ -16,8 +16,8 @@ npm run check    # type-check .astro and .ts files
 
 | What | Where |
 | --- | --- |
-| Name, intro, email, social links, location | `src/data/site.ts` |
-| Experience, education, awards | `src/data/resume.ts` |
+| Name, intro, meta description, email, social links | `src/data/site.ts` |
+| Compact experience, education, awards | `src/data/resume.ts` |
 | Personal projects | `src/content/projects/*.md` |
 | Images (background, profile, project logos, press badges) | `src/assets/` |
 | Favicons, CNAME, sitemap, robots.txt | `public/` |
@@ -29,7 +29,11 @@ Create `src/content/projects/<id>.md`. The file name is the project's id: its po
 ```markdown
 ---
 title: My Project
-order: 11                      # position in the grid
+featured: true                # optional: big card with press logos (press, 10k+ users or a technical achievement)
+status: active                 # active | retired (no longer maintained or available)
+year: "2024"                   # optional
+stat: 10k+ downloads           # optional headline number
+order: 1                       # position within its group (Featured / More projects)
 type: Java, Android (app)      # optional
 summary: Short text shown on the card.
 logo: ../../assets/logos/my-project.png

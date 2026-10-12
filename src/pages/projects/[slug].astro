@@ -4,12 +4,17 @@ import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects', (project) => !project.data.externalUrl);
-  return projects.map((project) => ({ params: { slug: project.id }, props: { title: project.data.title } }));
+  const current = projects.map((project) => ({ params: { slug: project.id }, props: { title: project.data.title, target: `/#${project.id}` } }));
+  // Projects removed from the site still keep their old URLs working
+  const retired = [
+    { slug: 'rental-store', title: 'Rental Store Mock API' },
+    { slug: 'dont-stop-moving', title: "Don't stop moving! The game" },
+    { slug: 'website', title: 'This website' },
+  ].map(({ slug, title }) => ({ params: { slug }, props: { title, target: '/#projects' } }));
+  return [...current, ...retired];
 }
 
-const { slug } = Astro.params;
-const { title } = Astro.props;
-const target = `/#${slug}`;
+const { title, target } = Astro.props;
 ---
 
 <!doctype html>
