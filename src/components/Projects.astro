@@ -1,0 +1,84 @@
+---
+import { getCollection } from 'astro:content';
+import Icon from './Icon.astro';
+import ProjectCard from './ProjectCard.astro';
+import ProjectDialog from './ProjectDialog.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="projects">
+  <div class="container">
+    <h2 class="heading">Personal Projects</h2>
+
+    <div class="grid" id="project-grid" data-project-grid>
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+
+    <button class="btn btn-link toggle no-print" type="button" aria-controls="project-grid" aria-expanded="false" data-project-toggle>
+      <span class="when-collapsed">Show more <Icon name="chevron-down" /></span>
+      <span class="when-expanded">Show less <Icon name="chevron-up" /></span>
+    </button>
+  </div>
+
+  {projects.filter((project) => !project.data.externalUrl).map((project) => <ProjectDialog project={project} />)}
+</section>
+
+<style>
+  .heading {
+    margin-top: 1rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem 30px;
+    margin-top: 1rem;
+  }
+
+  /* Collapsed: first 3 projects (4 on wide screens, so the row stays full) */
+  .grid:not([data-expanded]) > :global(:nth-child(n + 4)) {
+    display: none;
+  }
+
+  @media (min-width: 576px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 992px) {
+    .grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid:not([data-expanded]) > :global(:nth-child(4)) {
+      display: flex;
+    }
+  }
+
+  .toggle {
+    margin-top: 1.5rem;
+  }
+
+  .toggle :global(.icon) {
+    margin-left: 0.25rem;
+  }
+
+  .toggle[aria-expanded='true'] .when-collapsed,
+  .toggle[aria-expanded='false'] .when-expanded {
+    display: none;
+  }
+
+  @media print {
+    .grid > :global(*) {
+      display: flex !important;
+    }
+  }
+</style>

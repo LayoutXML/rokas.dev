@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+---
+
+<Base title={`Page Not Found | ${site.name}`}>
+  <Navbar />
+  <main>
+    <div class="container">
+      <h2>
+        <Icon name="times" class="left" />
+        Page Not Found
+        <Icon name="times" class="right" />
+      </h2>
+    </div>
+  </main>
+  <Footer />
+</Base>
+
+<style>
+  main {
+    padding-bottom: 2rem;
+  }
+
+  h2 {
+    margin: 1.5rem 0 1rem;
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  h2 :global(.left) {
+    margin-right: 1rem;
+  }
+
+  h2 :global(.right) {
+    margin-left: 1rem;
+  }
+</style>
+
+<script>
+  import '../scripts/site';
+</script>

@@ -1,0 +1,114 @@
+---
+import { site } from '../data/site';
+
+const links = [
+  { href: '/#home', label: 'Home' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#about', label: 'About' },
+  { href: '/#contacts', label: 'Contacts' },
+];
+---
+
+<nav class="navbar no-print" data-navbar>
+  <a class="brand" href="/#home">{site.name}</a>
+  <button class="toggler" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="toggler-icon"></span>
+  </button>
+  <div class="links" id="nav-links">
+    {links.map((link) => <a class="link" href={link.href}>{link.label}</a>)}
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-dark);
+    border-bottom-left-radius: var(--radius-card);
+    border-bottom-right-radius: var(--radius-card);
+  }
+
+  .brand {
+    padding: 0.3125rem 0;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    color: #fff;
+  }
+  .brand:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+
+  .toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background: no-repeat center / 100% 100%
+      url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  .links {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+  }
+
+  .navbar[data-open] .links {
+    display: flex;
+  }
+
+  .link {
+    padding: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .link:hover {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+  }
+  .link.active {
+    color: #fff;
+  }
+
+  @media (min-width: 992px) {
+    .navbar {
+      flex-wrap: nowrap;
+    }
+
+    .toggler {
+      display: none;
+    }
+
+    .links,
+    .navbar[data-open] .links {
+      display: flex;
+      flex-basis: auto;
+      flex-direction: row;
+      margin-left: auto;
+    }
+
+    .link {
+      padding: 0.5rem;
+    }
+  }
+</style>

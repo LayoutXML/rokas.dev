@@ -1,0 +1,94 @@
+---
+import type { ResumeEntry } from '../data/resume';
+
+interface Props {
+  entries: ResumeEntry[];
+}
+
+const { entries } = Astro.props;
+---
+
+{
+  entries.map((entry) => (
+    <div class="entry">
+      <div class="heading">
+        <h4 class="title">
+          {entry.title}
+          {entry.note && <span class="note"> {entry.note}</span>}
+        </h4>
+        {entry.dates && <h5 class="dates">{entry.dates}</h5>}
+      </div>
+      {entry.organisation && <h5>{entry.organisation}</h5>}
+      {entry.content?.map((block) =>
+        typeof block === 'string' ? (
+          <p>{block}</p>
+        ) : (
+          <>
+            {block.intro && <p class="list-intro">{block.intro}</p>}
+            <ul>
+              {block.list.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </>
+        ),
+      )}
+    </div>
+  ))
+}
+
+<style>
+  .entry {
+    padding-top: 1.5rem;
+  }
+
+  .entry:first-of-type {
+    padding-top: 1rem;
+  }
+
+  .heading {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    margin-bottom: 0.5rem;
+  }
+
+  .note {
+    font-weight: 400;
+  }
+
+  .dates {
+    font-weight: 300;
+  }
+
+  p,
+  li {
+    margin: 0;
+    font-weight: 300;
+  }
+
+  .list-intro {
+    margin-top: 1rem;
+  }
+
+  ul {
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 992px) {
+    .heading {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .dates {
+      flex-shrink: 0;
+      text-align: right;
+      color: var(--color-muted);
+    }
+  }
+</style>

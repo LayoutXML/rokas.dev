@@ -1,56 +1,19 @@
 {
-  "name": "rokasjankunas",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "NODE_OPTIONS=--openssl-legacy-provider ng serve",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+  "name": "rokas-dev",
+  "type": "module",
+  "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
   "dependencies": {
-    "@angular/animations": "~11.0.0",
-    "@angular/common": "~11.0.0",
-    "@angular/compiler": "~11.0.0",
-    "@angular/core": "~11.0.0",
-    "@angular/forms": "~11.0.0",
-    "@angular/platform-browser": "~11.0.0",
-    "@angular/platform-browser-dynamic": "~11.0.0",
-    "@angular/router": "~11.0.0",
-    "@fortawesome/angular-fontawesome": "^0.8.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@ng-bootstrap/ng-bootstrap": "^8.0.0",
-    "bootstrap": "^4.5.3",
-    "ngx-bootstrap": "^6.2.0",
-    "ngx-spinner": "^11.0.2",
-    "rxjs": "~6.6.3",
-    "smoothscroll-polyfill": "^0.4.4",
-    "tslib": "^2.0.3",
-    "zone.js": "~0.11.3"
+    "astro": "^7.3.8"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.1100.1",
-    "@angular/cli": "~11.0.1",
-    "@angular/compiler-cli": "~11.0.0",
-    "@angular/language-service": "~11.0.0",
-    "@types/jasmine": "~3.6.1",
-    "@types/jasminewd2": "~2.0.8",
-    "@types/node": "~14.14.7",
-    "codelyzer": "^6.0.1",
-    "jasmine-core": "~3.6.0",
-    "jasmine-spec-reporter": "~6.0.0",
-    "karma": "~5.2.3",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~3.0.3",
-    "karma-jasmine": "~4.0.1",
-    "karma-jasmine-html-reporter": "^1.5.4",
-    "protractor": "~7.0.0",
-    "ts-node": "~9.0.0",
-    "tslint": "~5.20.1",
-    "typescript": "^4.0.5"
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^6.0.3"
   }
 }

@@ -1,0 +1,134 @@
+---
+import { Image, getImage } from 'astro:assets';
+import { site } from '../data/site';
+import background from '../assets/background_mountains.jpg';
+import profile from '../assets/profile.jpg';
+
+const bg = await getImage({ src: background, width: 1920, format: 'webp', quality: 70 });
+---
+
+<section id="home" class="hero" style={`--bg: url(${bg.src})`} title={site.name}>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <a class="profile" href="#about">
+          <Image src={profile} width={400} alt="Profile picture" loading="eager" />
+        </a>
+        <div class="text">
+          <h1 class="title">{site.name}</h1>
+          <p class="lead">{site.intro}</p>
+          <a class="btn btn-lg no-print" href="#about">About me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="corner-helper"></div>
+</section>
+
+<style>
+  .hero {
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), var(--bg) center / cover;
+  }
+
+  .jumbotron {
+    padding: 3rem 1rem 2rem;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile {
+    width: 33.333%;
+    margin: 0 auto 1rem;
+  }
+
+  .profile img {
+    display: block;
+    border-radius: 50%;
+  }
+
+  .title {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+
+  .corner-helper {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  @media (min-width: 576px) {
+    .jumbotron {
+      padding: 3rem 2rem 4rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      background-attachment: fixed;
+    }
+
+    .row {
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .profile {
+      flex: 0 0 calc(25% - 22.5px);
+      margin: 0;
+    }
+
+    .profile img {
+      max-width: 75%;
+    }
+
+    .text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .title {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 0.15em solid transparent;
+      animation:
+        typing 3.5s steps(40, end),
+        blinking 0.75s step-end 7;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .title {
+      animation: none;
+    }
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blinking {
+    from,
+    to {
+      border-color: #fff;
+    }
+    50% {
+      border-color: transparent;
+    }
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+import { awards, education, experience, experienceSummary } from '../data/resume';
+import ResumeEntries from './ResumeEntries.astro';
+---
+
+<section id="about">
+  <div class="container">
+    <h2 class="first">Experience</h2>
+    <p class="summary">{experienceSummary}</p>
+    <ResumeEntries entries={experience} />
+
+    <h2>Education</h2>
+    <ResumeEntries entries={education} />
+
+    <h2>Awards & Achievements</h2>
+    <ResumeEntries entries={awards} />
+  </div>
+</section>
+
+<style>
+  section {
+    padding-bottom: 1rem;
+  }
+
+  h2 {
+    margin: 3rem 0 0.25rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid #888;
+  }
+
+  h2.first {
+    margin-top: 1.5rem;
+  }
+
+  .summary {
+    margin: 1rem 0 0;
+    font-weight: 300;
+  }
+</style>

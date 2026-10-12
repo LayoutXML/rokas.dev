@@ -1,0 +1,19 @@
+---
+// Inlines an SVG from src/icons by file name, e.g. <Icon name="github" />
+const icons = import.meta.glob<string>('../icons/*.svg', { query: '?raw', import: 'default', eager: true });
+
+interface Props {
+  name: string;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+const svg = icons[`../icons/${name}.svg`];
+if (!svg) throw new Error(`Unknown icon: ${name}`);
+
+const html = svg
+  .replace(/<!--.*?-->/g, '')
+  .replace('<svg', `<svg class="icon${className ? ` ${className}` : ''}" aria-hidden="true" focusable="false"`);
+---
+
+<Fragment set:html={html} />

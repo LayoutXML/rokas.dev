@@ -1,0 +1,116 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { title, type, summary, logo, publications, externalUrl } = project.data;
+const dialogId = `project-${project.id}`;
+---
+
+<article class="card">
+  <Image class="logo" src={logo} width={180} height={180} densities={[1, 2]} alt={`Rokas Jankunas | ${title}`} />
+  <div class="body">
+    <h5 class="title">{title}</h5>
+    {type && <p class="type">{type}</p>}
+    <p class:list={['summary', { 'has-publications': publications.length > 0 }]}>{summary}</p>
+    <div class="footer">
+      {
+        publications.length > 0 && (
+          <div class="no-print">
+            <p class="featured-label">As featured in:</p>
+            <div class="badges">
+              {publications.map((publication) => (
+                <Image src={publication.badge} width={180} densities={[1, 2]} alt={publication.outlet} />
+              ))}
+            </div>
+          </div>
+        )
+      }
+      {
+        externalUrl ? (
+          <a class="btn read-more no-print" href={externalUrl}>Read more</a>
+        ) : (
+          <a class="btn read-more no-print" href={`#${project.id}`} data-open-dialog={dialogId}>Read more</a>
+        )
+      }
+    </div>
+  </div>
+</article>
+
+<style>
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background-color: var(--color-card-tint);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+  }
+
+  .logo {
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin: 1rem auto;
+  }
+
+  .body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: 1.25rem;
+    background-color: #fff;
+    border-radius: var(--radius-card);
+  }
+
+  .title {
+    margin-bottom: 0.25rem;
+  }
+
+  .type {
+    font-style: italic;
+  }
+
+  .summary {
+    margin-bottom: 3rem;
+  }
+
+  .summary.has-publications {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer {
+    margin-top: auto;
+  }
+
+  .featured-label {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  .badges {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0 15px;
+  }
+
+  .badges img {
+    max-width: min(100%, 180px);
+    margin-bottom: 1rem;
+  }
+
+  /* Whole card is clickable, like Bootstrap's stretched-link */
+  .read-more::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+</style>

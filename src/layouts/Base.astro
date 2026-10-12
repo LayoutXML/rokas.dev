@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = site.title, description = site.intro } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/favicon/favicon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon-180x180.png" />
+
+    <meta name="theme-color" content="#343a40" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,30 @@
+---
+// Old project pages (/projects/<id>/) redirect to the project's popup on the home page
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects', (project) => !project.data.externalUrl);
+  return projects.map((project) => ({ params: { slug: project.id }, props: { title: project.data.title } }));
+}
+
+const { slug } = Astro.params;
+const { title } = Astro.props;
+const target = `/#${slug}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title} | Rokas Jankunas</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={new URL('/', Astro.site)} />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <script is:inline define:vars={{ target }}>
+      location.replace(target);
+    </script>
+  </head>
+  <body>
+    <a href={target}>{title}</a>
+  </body>
+</html>

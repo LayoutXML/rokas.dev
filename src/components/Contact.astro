@@ -1,0 +1,95 @@
+---
+import { getImage } from 'astro:assets';
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+import background from '../assets/background_mountains.jpg';
+
+const bg = await getImage({ src: background, width: 1920, format: 'webp', quality: 70 });
+const [emailUser, emailDomain] = site.email.split('@');
+const linkedinPath = site.linkedin.replace(/^https:\/\/(www\.)?/, '');
+---
+
+<section id="contacts" class="contact" style={`--bg: url(${bg.src})`}>
+  <div class="corner-helper"></div>
+  <div class="container">
+    <h2>Contact me</h2>
+    <ul class="rows">
+      <li>
+        <a class="row-icon no-print" href={`mailto:${site.email}`} aria-label="Email"><Icon name="envelope" /></a>
+        <a href={`mailto:${site.email}`}>{emailUser}@<wbr />{emailDomain}</a>
+      </li>
+      <li>
+        <a class="row-icon no-print" href={site.linkedin} aria-label="LinkedIn"><Icon name="linkedin-in" /></a>
+        <a href={site.linkedin} set:html={linkedinPath.replace(/([./])/g, '<wbr>$1')} />
+      </li>
+      <li>
+        <span class="row-icon no-print"><Icon name="map-marker-alt" /></span>
+        <span>{site.location}</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .contact {
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), var(--bg) center / cover;
+  }
+
+  .corner-helper {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+
+  h2 {
+    margin: 1rem 0 0.25rem;
+    padding-top: 1rem;
+  }
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0 0;
+    padding: 1.5rem 0 4.5rem;
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  li {
+    display: flex;
+    align-items: baseline;
+    gap: 30px;
+  }
+
+  .row-icon {
+    flex: 0 0 calc(8.333% - 15px);
+    padding-right: 1rem;
+    text-align: center;
+    color: #fff;
+  }
+
+  a {
+    word-break: break-word;
+  }
+
+  @media (min-width: 768px) {
+    .contact {
+      background-attachment: fixed;
+    }
+
+    .rows {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media print {
+    .contact {
+      color: var(--color-text);
+      background: none;
+    }
+  }
+</style>

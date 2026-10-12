@@ -1,0 +1,60 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer no-print">
+  <p>
+    © {site.name} <span class="years">{site.copyrightSince} - {year}</span>
+  </p>
+  <div class="links">
+    <a href={site.github} aria-label="GitHub"><Icon name="github" /></a>
+    <a href={site.googlePlay} aria-label="Google Play"><Icon name="google-play" /></a>
+    <a href={site.linkedin} aria-label="LinkedIn"><Icon name="linkedin-in" /></a>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: -1rem;
+    padding: 1.5rem 1rem 0.5rem 1.5rem;
+    color: #f8f9fa;
+    background-color: var(--color-dark);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .years {
+    display: none;
+  }
+
+  .links {
+    display: flex;
+    gap: 1rem;
+    margin-right: 0.5rem;
+    font-size: 16pt;
+    line-height: 1;
+  }
+
+  .links a {
+    color: #fff;
+  }
+
+  @media (min-width: 576px) {
+    .years {
+      display: inline;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .links {
+      gap: 2rem;
+    }
+  }
+</style>
