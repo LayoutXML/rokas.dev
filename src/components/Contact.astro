@@ -72,7 +72,20 @@ const linkedinPath = site.linkedin.replace(/^https:\/\/(www\.)?/, '');
   }
 
   a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
     word-break: break-word;
+  }
+
+  a:hover {
+    color: #fff;
+    text-decoration-color: rgba(255, 255, 255, 0.6);
+  }
+
+  a.row-icon {
+    text-decoration: none;
   }
 
   @media (min-width: 768px) {
